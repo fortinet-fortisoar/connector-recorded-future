@@ -258,7 +258,7 @@ def get_alert(config, params):
 def test_connection(config):
     try:
         url, headers, verify_ssl = _get_config_params(config)
-        endpoint = '{}/v2/alert/rule?limit=1'.format(url)
+        endpoint = '{}/v2/soar/triage/contexts'.format(url)
         response = requests.get(endpoint, headers=headers, verify=verify_ssl)
         if response.ok:
             logger.info('check health executed successfully')
