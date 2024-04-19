@@ -1,0 +1,3269 @@
+{
+  "name": "recorded-future",
+  "label": "Recorded Future",
+  "version": "1.0.1",
+  "description": "Recorded Future is a threat intelligence product that automatically collects and analyzes threat intelligence from technical, open, and dark web sources to provide invaluable context for faster human analysis and real-time integration with your existing security systems.",
+  "publisher": "CyberSponse",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "category": "Threat Intelligence",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "https://help.cybersponse.com/support/solutions/articles/17000081993-recorded-future-v1-0-1",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "description": "URL of the Recorded Future server from where the connector gets notifications",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "base_url",
+        "placeholder": "https://api.recordedfuture.com",
+        "value": "api.recordedfuture.com"
+      },
+      {
+        "title": "API Key",
+        "description": "API Key that is configured for you to authenticate your Recorded Future account",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "api_key"
+      },
+      {
+        "title": "Verify SSL",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "domain_reputation",
+      "title": "Get Domain Reputation",
+      "category": "investigation",
+      "annotation": "get_domain_reputation",
+      "description": "Looks up the intel threat context for a domain and retrieves its reputation from Recorded future, based on the domain name you have specified",
+      "enabled": true,
+      "output_schema": {
+        "data": {
+          "intelCard": "",
+          "metrics": [
+            {
+              "type": "",
+              "value": ""
+            }
+          ],
+          "analystNotes": [],
+          "timestamps": {
+            "lastSeen": "",
+            "firstSeen": ""
+          },
+          "sightings": [
+            {
+              "published": "",
+              "fragment": "",
+              "title": "",
+              "type": "",
+              "url": "",
+              "source": ""
+            }
+          ],
+          "entity": {
+            "type": "",
+            "id": "",
+            "name": ""
+          },
+          "risk": {
+            "score": "",
+            "riskSummary": "",
+            "criticality": "",
+            "riskString": "",
+            "evidenceDetails": [
+              {
+                "criticality": "",
+                "rule": "",
+                "mitigationString": "",
+                "criticalityLabel": "",
+                "timestamp": "",
+                "evidenceString": ""
+              }
+            ],
+            "criticalityLabel": "",
+            "rules": ""
+          },
+          "relatedEntities": [
+            {
+              "type": "",
+              "entities": [
+                {
+                  "entity": {
+                    "type": "",
+                    "id": "",
+                    "name": ""
+                  },
+                  "count": ""
+                }
+              ]
+            }
+          ],
+          "counts": [
+            {
+              "count": "",
+              "date": ""
+            }
+          ],
+          "threatLists": []
+        },
+        "metadata": {
+          "entries": []
+        }
+      },
+      "parameters": [
+        {
+          "title": "Domain",
+          "description": "Name of the domain for which you want to retrieve reputation from Recorded Future.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "domain"
+        },
+        {
+          "title": "Fields",
+          "description": "(Optional) Fields that you want to include in the output. You can choose from the following options: Analysis Notes, Entity, Counts, Intel Card URL, Metrics, Related Entities, Risk, Sightings, Threat Lists, and Event Timestamps. By default, this option is set as Entity.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "options": [
+            "Analyst Notes",
+            "Entity",
+            "Counts",
+            "Intel Card URL",
+            "Metrics",
+            "Related Entities",
+            "Risk",
+            "Sightings",
+            "Threat Lists",
+            "Event Timestamps"
+          ],
+          "name": "fields",
+          "tooltip": "Fields to include in output",
+          "value": [
+            "Risk"
+          ]
+        },
+        {
+          "title": "Metadata",
+          "description": "(Optional) Select this option to annotate the response with additional metadata explaining the response data elements. By default, this option is set as True.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "metadata",
+          "value": true
+        }
+      ]
+    },
+    {
+      "operation": "domain_risklist",
+      "title": "Get Domain Risk List",
+      "category": "investigation",
+      "annotation": "get_risk_list",
+      "description": "Retrieves the risk list information for the domain(s) from Recorded Future, based on the risk rule list you have specified",
+      "enabled": true,
+      "output_schema": {
+        "stix:STIX_Package": {
+          "@id": "",
+          "@timestamp": "",
+          "@version": "",
+          "@xmlns": "",
+          "@xmlns:DomainNameObj": "",
+          "@xmlns:RF": "",
+          "@xmlns:cybox": "",
+          "@xmlns:indicator": "",
+          "@xmlns:stix": "",
+          "@xmlns:stixCommon": "",
+          "@xmlns:stixVocabs": "",
+          "@xmlns:ttp": "",
+          "stix:STIX_Header": {
+            "stix:Description": ""
+          },
+          "stix:Indicators": {
+            "stix:Indicator": [
+              {
+                "@id": "",
+                "@timestamp": "",
+                "@xmlns:xsi": "",
+                "@xsi:type": "",
+                "indicator:Title": "",
+                "indicator:Type": {
+                  "@xsi:type": "",
+                  "#text": ""
+                },
+                "indicator:Description": "",
+                "indicator:Valid_Time_Position": {
+                  "indicator:Start_Time": {
+                    "@precision": "",
+                    "#text": ""
+                  },
+                  "indicator:End_Time": {
+                    "@precision": "",
+                    "#text": ""
+                  }
+                },
+                "indicator:Observable": {
+                  "@id": "",
+                  "cybox:Object": {
+                    "@id": "",
+                    "cybox:Properties": {
+                      "@type": "",
+                      "@xsi:type": "",
+                      "DomainNameObj:Value": {
+                        "@condition": "",
+                        "#text": ""
+                      }
+                    }
+                  }
+                },
+                "indicator:Indicated_TTP": [
+                  {
+                    "stixCommon:Confidence": {
+                      "stixCommon:Value": {
+                        "@xsi:type": "",
+                        "#text": ""
+                      }
+                    },
+                    "stixCommon:TTP": {
+                      "@id": "",
+                      "@timestamp": "",
+                      "@xsi:type": "",
+                      "ttp:Title": "",
+                      "ttp:Description": ""
+                    }
+                  }
+                ],
+                "indicator:Confidence": {
+                  "stixCommon:Value": "",
+                  "stixCommon:Description": ""
+                },
+                "indicator:Producer": {
+                  "stixCommon:Description": "",
+                  "stixCommon:References": {
+                    "stixCommon:Reference": ""
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "parameters": [
+        {
+          "title": "Risk Rule List",
+          "tooltip": "Risk Rule List based on which you want to retrieve risk list information for domain (s) from Recorded Future",
+          "description": "Risk Rule List based on which you want to retrieve risk list information for domain (s) from Recorded Future",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "risk_rule_list",
+          "options": [
+            "Historically Reported by Insikt Group",
+            "C&C Nameserver",
+            "C&C DNS Name",
+            "C&C URL",
+            "Compromised URL",
+            "Recently Resolved to Host of Many DDNS Names",
+            "Historically Reported as a Defanged DNS Names",
+            "Recent Fast Flux DNS Name",
+            "Historically Reported in Threat List",
+            "Historically Linked to Cyber Attack",
+            "Historical Malware Analysis DNS Name",
+            "Blacklisted DNS Name",
+            "Active Phishing URL",
+            "Ransomware Distribution URL",
+            "Ransomware Payment DNS Name",
+            "Recently Reported by Insikt Group",
+            "Recently Reported as a Defanged DNS Names",
+            "Recently Linked to Cyber Attack",
+            "Recent Malware Analysis DNS Name",
+            "Recent Threat Researcher",
+            "Recent Typosquat Similarity - DNS Sandwich",
+            "Recent Typosquat Similarity - Typo or Homograph",
+            "Recently Resolved to Malicious IP",
+            "Recently Resolved to Suspicious IP",
+            "Recently Resolved to Unusual IP",
+            "Recently Resolved to Very Malicious IP",
+            "Trending in Recorded Future Analyst Community",
+            "Historical Threat Researcher",
+            "Historical Typosquat Similarity - DNS Sandwich",
+            "Historical Typosquat Similarity - Typo or Homograph"
+          ],
+          "value": "Historically Reported by Insikt Group"
+        }
+      ]
+    },
+    {
+      "operation": "search_domain",
+      "title": "Search Domain",
+      "category": "investigation",
+      "annotation": "search_domain",
+      "description": "Searches for and retrieves information about intel threat context for all domains or specific domain(s) (based on the filter criteria you have specified) from Recorded Future",
+      "enabled": true,
+      "output_schema": {
+        "data": {
+          "results": [
+            {
+              "risk": {
+                "riskString": "",
+                "evidenceDetails": [
+                  {
+                    "timestamp": "",
+                    "evidenceString": "",
+                    "mitigationString": "",
+                    "criticality": "",
+                    "rule": "",
+                    "criticalityLabel": ""
+                  }
+                ],
+                "criticalityLabel": "",
+                "score": "",
+                "rules": "",
+                "criticality": "",
+                "riskSummary": ""
+              },
+              "relatedEntities": [
+                {
+                  "type": "",
+                  "entities": [
+                    {
+                      "count": "",
+                      "entity": {
+                        "name": "",
+                        "id": "",
+                        "type": ""
+                      }
+                    }
+                  ]
+                }
+              ],
+              "intelCard": "",
+              "threatLists": [
+                {
+                  "name": "",
+                  "id": "",
+                  "description": "",
+                  "type": ""
+                }
+              ],
+              "metrics": [
+                {
+                  "value": "",
+                  "type": ""
+                }
+              ],
+              "analystNotes": [],
+              "sightings": [
+                {
+                  "title": "",
+                  "published": "",
+                  "type": "",
+                  "url": "",
+                  "fragment": "",
+                  "source": ""
+                }
+              ],
+              "timestamps": {
+                "lastSeen": "",
+                "firstSeen": ""
+              },
+              "entity": {
+                "name": "",
+                "id": "",
+                "type": ""
+              }
+            }
+          ]
+        },
+        "counts": {
+          "returned": "",
+          "total": ""
+        },
+        "metadata": {
+          "entries": []
+        }
+      },
+      "parameters": [
+        {
+          "title": "Fields",
+          "description": "Fields that you want to include in the output. You can choose from the following options: Analysis Notes, Entity, Counts, Intel Card URL, Metrics, Related Entities, Risk, Sightings, Threat Lists, and Event Timestamps. By default, this option is set as Entity.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "name": "fields",
+          "tooltip": "Fields to include in output",
+          "options": [
+            "Analyst Notes",
+            "Entity",
+            "Counts",
+            "Intel Card URL",
+            "Metrics",
+            "Related Entities",
+            "Risk",
+            "Sightings",
+            "Threat Lists",
+            "Event Timestamps"
+          ],
+          "value": [
+            "Risk"
+          ]
+        },
+        {
+          "title": "Metadata",
+          "description": "Select this option to annotate the response with additional metadata explaining the response data elements. By default, this option is set as True.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "metadata",
+          "value": true
+        },
+        {
+          "title": "Limit",
+          "description": "Maximum number of results that this operation should return. By default, this option is set as 10.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit",
+          "tooltip": "Maximum number of records",
+          "value": 10
+        },
+        {
+          "title": "From",
+          "description": "Index of the first item to return from the search result.",
+          "tooltip": "Records from offset",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "from"
+        },
+        {
+          "title": "Risk Score",
+          "description": "Filter the search results by the risk score, which are integer values from 0 to 100.For example, Risk Score=[20,90] // same as 20 <= Risk Score <= 90 ",
+          "tooltip": "Eg. [20,90] same as 20 <= riskScore <= 90, [20,90) same as 20 <= riskScore < 90",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "riskScore"
+        },
+        {
+          "title": "First Seen",
+          "description": "Filter the search results by the first see date (all ElasticSearch compatible date formats are valid). For example, 2017-03-14T18:01:18.750Z, 2017-01-01, 2017/01/01",
+          "tooltip": "First seen date, all Elasticsearch compatible date formats are valid Eg. 2017-03-14T18:01:18.750Z, 2017-01-01",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "firstSeen"
+        },
+        {
+          "title": "Last Seen",
+          "description": "Filter the search results by the last see date (all ElasticSearch compatible date formats are valid).For example, 2017-03-14T18:01:18.750Z, 2017-01-01, 2017/01/01",
+          "tooltip": "Last seen date, all Elasticsearch compatible date formats are valid Eg. 2017-03-14T18:01:18.750Z, 2017-01-01",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "lastSeen"
+        },
+        {
+          "title": "List ID",
+          "description": "Vulnerability ID from Recorded Future. For example, idn:ddobnajanu.club",
+          "tooltip": "Vulnerability ID from Recorded Future Eg. idn:ddobnajanu.club",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "list"
+        },
+        {
+          "title": "Risk Rule",
+          "description": "Risk Rule List based on which you want to retrieve risk list information for domain (s) from Recorded Future.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "riskRule",
+          "options": [
+            "Historically Reported by Insikt Group",
+            "C&C Nameserver",
+            "C&C DNS Name",
+            "C&C URL",
+            "Compromised URL",
+            "Recently Resolved to Host of Many DDNS Names",
+            "Historically Reported as a Defanged DNS Names",
+            "Recent Fast Flux DNS Name",
+            "Historically Reported in Threat List",
+            "Large",
+            "Historically Linked to Cyber Attack",
+            "Historical Malware Analysis DNS Name",
+            "Blacklisted DNS Name",
+            "Active Phishing URL",
+            "Ransomware Distribution URL",
+            "Ransomware Payment DNS Name",
+            "Recently Reported by Insikt Group",
+            "Recently Reported as a Defanged DNS Names",
+            "Recently Linked to Cyber Attack",
+            "Recent Malware Analysis DNS Name",
+            "Recent Threat Researcher",
+            "Recent Typosquat Similarity - DNS Sandwich",
+            "Recent Typosquat Similarity - Typo or Homograph",
+            "Recently Resolved to Malicious IP",
+            "Recently Resolved to Suspicious IP",
+            "Recently Resolved to Unusual IP",
+            "Recently Resolved to Very Malicious IP",
+            "Trending in Recorded Future Analyst Community",
+            "Historical Threat Researcher",
+            "Historical Typosquat Similarity - DNS Sandwich",
+            "Historical Typosquat Similarity - Typo or Homograph"
+          ],
+          "value": "Historically Reported by Insikt Group"
+        },
+        {
+          "title": "Parent",
+          "description": "Filter domains (including FQDNs) in a parent domain or a subdomain.",
+          "tooltip": "Subdomains with parent",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "parent"
+        },
+        {
+          "title": "Order By",
+          "description": "Order the search results by this filter criteria. You can choose from the following options: Created, Criticality, First Seen, Last Seen, Modified, Risk Score, Rules, Seven Days Hits, Sixty Days Hits, or Total Hits.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "orderby",
+          "options": [
+            "Created",
+            "Criticality",
+            "First Seen",
+            "Last Seen",
+            "Modified",
+            "Risk Score",
+            "Rules",
+            "Seven Days Hits",
+            "Sixty Days Hits",
+            "Total Hits"
+          ],
+          "value": "Created"
+        },
+        {
+          "title": "Direction",
+          "description": "Arrange the search results either in the Ascending order or Descending order based on the risk score.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "direction",
+          "options": [
+            "Ascending",
+            "Descending"
+          ],
+          "value": "Descending"
+        }
+      ]
+    },
+    {
+      "operation": "ip_reputation",
+      "title": "Get IP Reputation",
+      "category": "investigation",
+      "annotation": "get_ip_reputation",
+      "description": "Looks up the intel threat context for an IP address and retrieves its reputation from Recorded Future, based on the IP address you have specified",
+      "enabled": true,
+      "output_schema": {
+        "data": {
+          "intelCard": "",
+          "metrics": [
+            {
+              "type": "",
+              "value": ""
+            }
+          ],
+          "analystNotes": [],
+          "timestamps": {
+            "lastSeen": "",
+            "firstSeen": ""
+          },
+          "sightings": [
+            {
+              "published": "",
+              "fragment": "",
+              "title": "",
+              "type": "",
+              "url": "",
+              "source": ""
+            }
+          ],
+          "entity": {
+            "type": "",
+            "id": "",
+            "name": ""
+          },
+          "risk": {
+            "score": "",
+            "riskSummary": "",
+            "criticality": "",
+            "riskString": "",
+            "evidenceDetails": [
+              {
+                "criticality": "",
+                "rule": "",
+                "mitigationString": "",
+                "criticalityLabel": "",
+                "timestamp": "",
+                "evidenceString": ""
+              }
+            ],
+            "criticalityLabel": "",
+            "rules": ""
+          },
+          "relatedEntities": [
+            {
+              "type": "",
+              "entities": [
+                {
+                  "entity": {
+                    "type": "",
+                    "id": "",
+                    "name": ""
+                  },
+                  "count": ""
+                }
+              ]
+            }
+          ],
+          "counts": [
+            {
+              "count": "",
+              "date": ""
+            }
+          ],
+          "threatLists": [],
+          "location": {
+            "cidr": {
+              "type": "",
+              "id": "",
+              "name": ""
+            },
+            "organization": "",
+            "asn": "",
+            "location": {
+              "continent": "",
+              "country": "",
+              "city": ""
+            }
+          }
+        },
+        "metadata": {
+          "entries": []
+        }
+      },
+      "parameters": [
+        {
+          "title": "IP Address",
+          "description": "IP address for which you want to retrieve reputation from Recorded Future.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "ip"
+        },
+        {
+          "title": "Fields",
+          "description": "Optional) Fields that you want to include in the output. You can choose from the following options: Analysis Notes, Entity, Counts, Intel Card URL, Metrics, Related Entities, Risk, Sightings, Threat Lists, and Event Timestamps. By default, this option is set as Entity.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "options": [
+            "Analyst Notes",
+            "Entity",
+            "Location",
+            "Counts",
+            "Intel Card URL",
+            "Metrics",
+            "Related Entities",
+            "Risk",
+            "Sightings",
+            "Threat Lists",
+            "Event Timestamps"
+          ],
+          "name": "fields",
+          "tooltip": "Fields to include in output",
+          "value": [
+            "Risk"
+          ]
+        },
+        {
+          "title": "Metadata",
+          "description": "(Optional) Select this option to annotate the response with additional metadata explaining the response data elements. By default, this option is set as True.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "metadata",
+          "value": true
+        }
+      ]
+    },
+    {
+      "operation": "ip_risklist",
+      "title": "Get IP Risk List",
+      "description": "Retrieves the risk list information for the IP address(es) from Recorded Future, based on the risk rule list you have specified",
+      "category": "investigation",
+      "annotation": "get_risk_list",
+      "output_schema": {
+        "stix:STIX_Package": {
+          "@id": "",
+          "@timestamp": "",
+          "@version": "",
+          "@xmlns": "",
+          "@xmlns:AddressObj": "",
+          "@xmlns:RF": "",
+          "@xmlns:cybox": "",
+          "@xmlns:indicator": "",
+          "@xmlns:stix": "",
+          "@xmlns:stixCommon": "",
+          "@xmlns:stixVocabs": "",
+          "@xmlns:ttp": "",
+          "stix:STIX_Header": {
+            "stix:Description": ""
+          },
+          "stix:Indicators": {
+            "stix:Indicator": [
+              {
+                "@id": "",
+                "@timestamp": "",
+                "@xmlns:xsi": "",
+                "@xsi:type": "",
+                "indicator:Title": "",
+                "indicator:Type": {
+                  "@xsi:type": "",
+                  "#text": ""
+                },
+                "indicator:Description": "",
+                "indicator:Valid_Time_Position": {
+                  "indicator:Start_Time": {
+                    "@precision": "",
+                    "#text": ""
+                  },
+                  "indicator:End_Time": {
+                    "@precision": "",
+                    "#text": ""
+                  }
+                },
+                "indicator:Observable": {
+                  "@id": "",
+                  "cybox:Object": {
+                    "@id": "",
+                    "cybox:Properties": {
+                      "@category": "",
+                      "@xsi:type": "",
+                      "AddressObj:Address_Value": {
+                        "@condition": "",
+                        "#text": ""
+                      }
+                    }
+                  }
+                },
+                "indicator:Indicated_TTP": [
+                  {
+                    "stixCommon:Confidence": {
+                      "stixCommon:Value": {
+                        "@xsi:type": "",
+                        "#text": ""
+                      }
+                    },
+                    "stixCommon:TTP": {
+                      "@id": "",
+                      "@timestamp": "",
+                      "@xsi:type": "",
+                      "ttp:Title": "",
+                      "ttp:Description": ""
+                    }
+                  }
+                ],
+                "indicator:Confidence": {
+                  "stixCommon:Value": "",
+                  "stixCommon:Description": ""
+                },
+                "indicator:Producer": {
+                  "stixCommon:Description": "",
+                  "stixCommon:References": {
+                    "stixCommon:Reference": ""
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "parameters": [
+        {
+          "title": "Risk Rule List",
+          "description": "Risk Rule List based on which you want to retrieve risk list information for IP address(es) from Recorded Future.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "risk_rule_list",
+          "options": [
+            "Historically Reported by Insikt Group",
+            "Inside Possible Bogus BGP Route",
+            "Historical Botnet Traffic",
+            "Nameserver for C&C Server",
+            "Historical C&C Server",
+            "Cyber Exploit Signal: Important",
+            "Cyber Exploit Signal: Medium",
+            "Recent Host of Many DDNS Names",
+            "Historically Reported as a Defanged IP",
+            "Resolution of Fast Flux DNS Name",
+            "Historically Reported in Threat List",
+            "Historical Honeypot Sighting",
+            "Honeypot Host",
+            "Recent C&C Server",
+            "Historically Linked to Intrusion Method",
+            "Historically Linked to APT",
+            "Historically Linked to Cyber Attack",
+            "Malicious Packet Source",
+            "Malware Delivery",
+            "Historical Multicategory Blacklist",
+            "Historical Open Proxies",
+            "Phishing Host",
+            "Historical Positive Malware Verdict",
+            "Recently Reported by Insikt Group",
+            "Recent Botnet Traffic",
+            "Current C&C Server",
+            "Recently Reported as Defanged IP",
+            "Recent Honeypot Sighting",
+            "Recently Linked to Intrusion Method",
+            "Recently Linked to APT",
+            "Recently Linked to Cyber Attack",
+            "Recent Multicategory Blacklist",
+            "Recent Open Proxies",
+            "Recent Positive Malware Verdict",
+            "Recent Spam Source",
+            "Recent SSH/Dictionary Attacker",
+            "Recent Bad SSL Association",
+            "Recent Threat Researcher",
+            "Trending in Recorded Future Analyst Community",
+            "Historical Spam Source",
+            "Historical SSH/Dictionary Attacker",
+            "Historical Bad SSL Association",
+            "Historical Threat Researcher",
+            "Tor Node",
+            "Unusual IP",
+            "Vulnerable Host"
+          ],
+          "value": "Historically Reported by Insikt Group"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "search_ip",
+      "title": "Search IP",
+      "description": "Searches for and retrieves information about intel threat context for all IP addresses or specific IP address(es) (based on the filter criteria you have specified) from Recorded Future",
+      "category": "investigation",
+      "annotation": "search_ip",
+      "output_schema": {
+        "counts": {
+          "total": "",
+          "returned": ""
+        },
+        "metadata": {
+          "entries": []
+        },
+        "data": {
+          "results": [
+            {
+              "metrics": [
+                {
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "location": {
+                "cidr": {
+                  "id": "",
+                  "type": "",
+                  "name": ""
+                },
+                "asn": "",
+                "organization": "",
+                "location": {
+                  "country": "",
+                  "continent": ""
+                }
+              },
+              "intelCard": "",
+              "sightings": [
+                {
+                  "source": "",
+                  "type": "",
+                  "url": "",
+                  "fragment": "",
+                  "published": "",
+                  "title": ""
+                }
+              ],
+              "timestamps": {
+                "lastSeen": "",
+                "firstSeen": ""
+              },
+              "counts": [
+                {
+                  "count": "",
+                  "date": ""
+                }
+              ],
+              "entity": {
+                "id": "",
+                "type": "",
+                "name": ""
+              },
+              "risk": {
+                "score": "",
+                "criticalityLabel": "",
+                "rules": "",
+                "evidenceDetails": [
+                  {
+                    "criticalityLabel": "",
+                    "evidenceString": "",
+                    "mitigationString": "",
+                    "criticality": "",
+                    "rule": "",
+                    "timestamp": ""
+                  }
+                ],
+                "riskString": "",
+                "criticality": "",
+                "riskSummary": ""
+              },
+              "analystNotes": [],
+              "threatLists": [
+                {
+                  "id": "",
+                  "type": "",
+                  "name": "",
+                  "description": ""
+                }
+              ],
+              "relatedEntities": [
+                {
+                  "type": "",
+                  "entities": [
+                    {
+                      "count": "",
+                      "entity": {
+                        "id": "",
+                        "type": "",
+                        "name": ""
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "parameters": [
+        {
+          "title": "Fields",
+          "description": "Fields that you want to include in the output. You can choose from the following options: Analysis Notes, Entity, Counts, Intel Card URL, Metrics, Related Entities, Risk, Sightings, Threat Lists, and Event Timestamps. By default, this option is set as Entity.",
+          "tooltip": "Fields to include in output",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "name": "fields",
+          "options": [
+            "Analyst Notes",
+            "Entity",
+            "Counts",
+            "Location",
+            "Intel Card URL",
+            "Metrics",
+            "Related Entities",
+            "Risk",
+            "Sightings",
+            "Threat Lists",
+            "Event Timestamps"
+          ],
+          "value": [
+            "Risk"
+          ]
+        },
+        {
+          "title": "Metadata",
+          "description": "Select this option to annotate the response with additional metadata explaining the response data elements. By default, this option is set as True.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "metadata",
+          "value": true
+        },
+        {
+          "title": "Limit",
+          "description": "Maximum number of results that this operation should return. By default, this option is set as 10.",
+          "required": false,
+          "tooltip": "Maximum number of records",
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit",
+          "value": 10
+        },
+        {
+          "title": "From",
+          "description": "Records from offset.",
+          "tooltip": "Records from offset",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "from"
+        },
+        {
+          "title": "Range",
+          "description": "Range of IP addresses from starting IP address to ending IP address or CIDR.For example, 1.2.3.4/24 or 1.2.3.4-5.6.7.8.",
+          "tooltip": "Range as start-end or CIDR eg.format 1.2.3.4/24 or 1.2.3.4-5.6.7.8",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "range"
+        },
+        {
+          "title": "Risk Score",
+          "description": "Filter the search results by the risk score, which are integer values from 0 to 100.For example, Risk Score=[20,90] // same as 20 <= Risk Score <= 90 ",
+          "tooltip": "Eg. [20,90] same as 20 <= riskScore <= 90, [20,90) same as 20 <= riskScore < 90",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "riskScore"
+        },
+        {
+          "title": "First Seen",
+          "description": "Filter the search results by the first see date (all ElasticSearch compatible date formats are valid).For example, 2017-03-14T18:01:18.750Z, 2017-01-01, 2017/01/01",
+          "tooltip": "First seen date, all Elasticsearch compatible date formats are valid Eg. 2017-03-14T18:01:18.750Z, 2017-01-01",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "firstSeen"
+        },
+        {
+          "title": "Last Seen",
+          "description": "Filter the search results by the last see date (all ElasticSearch compatible date formats are valid).For example, 2017-03-14T18:01:18.750Z, 2017-01-01, 2017/01/01",
+          "tooltip": "Last seen date, all Elasticsearch compatible date formats are valid Eg. 2017-03-14T18:01:18.750Z, 2017-01-01",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "lastSeen"
+        },
+        {
+          "title": "List ID",
+          "description": "Vulnerability ID from Recorded Future.For example, ip:199.173.128.0/20",
+          "tooltip": "Vulnerability ID from Recorded Future Eg. ip:199.173.128.0/20",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "list"
+        },
+        {
+          "title": "Risk Rule",
+          "description": "Risk Rule List based on which you want to retrieve risk list information for IP address(es) from Recorded Future.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "riskRule",
+          "options": [
+            "Historically Reported by Insikt Group",
+            "Inside Possible Bogus BGP Route",
+            "Historical Botnet Traffic",
+            "Nameserver for C&C Server",
+            "Historical C&C Server",
+            "Cyber Exploit Signal: Important",
+            "Cyber Exploit Signal: Medium",
+            "Recent Host of Many DDNS Names",
+            "Historically Reported as a Defanged IP",
+            "Resolution of Fast Flux DNS Name",
+            "Historically Reported in Threat List",
+            "Historical Honeypot Sighting",
+            "Honeypot Host",
+            "Recent C&C Server",
+            "Large",
+            "Historically Linked to Intrusion Method",
+            "Historically Linked to ATP",
+            "Historically Linked to Cyber Attack",
+            "Malicious Packet Source",
+            "Malware Delivery",
+            "Historical Multicategory Blacklist",
+            "Historical Open Proxies",
+            "Phishing Host",
+            "Historical Positive Malware Verdict",
+            "Recently Reported by Insikt Group",
+            "Recent Botnet Traffic",
+            "Current C&C Server",
+            "Recently Reported as Defanged IP",
+            "Recent Honeypot Sighting",
+            "Recently Linked to Intrusion Method",
+            "Recently Linked to APT",
+            "Recently Linked to Cyber Attack",
+            "Recent Multicategory Blacklist",
+            "Recent Open Proxies",
+            "Recent Positive Malware Verdict",
+            "Recent Spam Source",
+            "Recent SSH/Dictionary Attacker",
+            "Recent Bad SSL Association",
+            "Recent Threat Researcher",
+            "Trending in Recorded Future Analyst Community",
+            "Historical Spam Source",
+            "Historical SSH/Dictionary Attacker",
+            "Historical Bad SSL Association",
+            "Historical Threat Researcher",
+            "Tor Node",
+            "Unusual IP",
+            "Vulnerable Host"
+          ],
+          "value": "Historically Reported by Insikt Group"
+        },
+        {
+          "title": "Order By",
+          "description": "Order the search results by this filter criteria. You can choose from the following options: Created, Criticality, First Seen, Last Seen, Modified, Risk Score, Rules, Seven Days Hits, Sixty Days Hits, or Total Hits.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "orderby",
+          "options": [
+            "Created",
+            "Criticality",
+            "First Seen",
+            "Last Seen",
+            "Modified",
+            "Risk Score",
+            "Rules",
+            "Seven Days Hits",
+            "Sixty Days Hits",
+            "Total Hits"
+          ],
+          "value": "Created"
+        },
+        {
+          "title": "Direction",
+          "description": "Arrange the search results either in the Ascending order or Descending order based on the risk score.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "direction",
+          "options": [
+            "Ascending",
+            "Descending"
+          ],
+          "value": "Descending"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "file_reputation",
+      "title": "Get File Reputation",
+      "description": "Looks up the intel threat context for a file identity hash (MD5, SHA-1 or SHA-256) and retrieves its reputation from Recorded future, based on the file hash you have specified",
+      "category": "investigation",
+      "annotation": "get_file_reputation",
+      "output_schema": {
+        "metadata": {
+          "entries": []
+        },
+        "data": {
+          "timestamps": {
+            "firstSeen": "",
+            "lastSeen": ""
+          },
+          "entity": {
+            "type": "",
+            "id": "",
+            "name": ""
+          },
+          "analystNotes": [],
+          "sightings": [
+            {
+              "published": "",
+              "fragment": "",
+              "title": "",
+              "type": "",
+              "url": "",
+              "source": ""
+            }
+          ],
+          "risk": {
+            "score": "",
+            "riskSummary": "",
+            "criticality": "",
+            "riskString": "",
+            "evidenceDetails": [
+              {
+                "criticality": "",
+                "rule": "",
+                "mitigationString": "",
+                "criticalityLabel": "",
+                "timestamp": "",
+                "evidenceString": ""
+              }
+            ],
+            "criticalityLabel": "",
+            "rules": ""
+          },
+          "threatLists": [],
+          "hashAlgorithm": "",
+          "intelCard": "",
+          "relatedEntities": [
+            {
+              "type": "",
+              "entities": [
+                {
+                  "entity": {
+                    "type": "",
+                    "id": "",
+                    "name": ""
+                  },
+                  "count": ""
+                }
+              ]
+            }
+          ],
+          "counts": [
+            {
+              "count": "",
+              "date": ""
+            }
+          ],
+          "metrics": [
+            {
+              "type": "",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "parameters": [
+        {
+          "title": "Filehash",
+          "description": "Filehash (MD5, SHA-1 or SHA-256) whose reputation you want to retrieve from Recorded Future.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "hash"
+        },
+        {
+          "title": "Fields",
+          "description": "(Optional) Fields that you want to include in the output. You can choose from the following options: Analysis Notes, Entity, Counts, Intel Card URL, Metrics, Related Entities, Risk, Sightings, Threat Lists, and Event Timestamps. By default, this option is set as Entity.",
+          "tooltip": "Fields to include in output",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "name": "fields",
+          "options": [
+            "Analyst Notes",
+            "Entity",
+            "Counts",
+            "Hash Algorithm",
+            "Intel Card URL",
+            "Metrics",
+            "Related Entities",
+            "Risk",
+            "Sightings",
+            "Threat Lists",
+            "Event Timestamps"
+          ],
+          "value": [
+            "Risk"
+          ]
+        },
+        {
+          "title": "Metadata",
+          "description": "(Optional) Select this option to annotate the response with additional metadata explaining the response data elements.By default, this option is set as True.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "metadata",
+          "value": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "file_risklist",
+      "title": "Get File Risk List",
+      "description": "Retrieves the risk list information for the file(s) from Recorded Future, based on the risk rule list you have specified",
+      "category": "investigation",
+      "annotation": "get_risk_list",
+      "output_schema": {
+        "stix:STIX_Package": {
+          "@id": "",
+          "@timestamp": "",
+          "@version": "",
+          "@xmlns": "",
+          "@xmlns:FileObj": "",
+          "@xmlns:RF": "",
+          "@xmlns:cybox": "",
+          "@xmlns:cyboxCommon": "",
+          "@xmlns:cyboxVocabs": "",
+          "@xmlns:indicator": "",
+          "@xmlns:stix": "",
+          "@xmlns:stixCommon": "",
+          "@xmlns:stixVocabs": "",
+          "@xmlns:ttp": "",
+          "stix:STIX_Header": {
+            "stix:Description": ""
+          },
+          "stix:Indicators": {
+            "stix:Indicator": [
+              {
+                "@id": "",
+                "@timestamp": "",
+                "@xmlns:xsi": "",
+                "@xsi:type": "",
+                "indicator:Title": "",
+                "indicator:Type": {
+                  "@xsi:type": "",
+                  "#text": ""
+                },
+                "indicator:Description": "",
+                "indicator:Valid_Time_Position": {
+                  "indicator:Start_Time": {
+                    "@precision": "",
+                    "#text": ""
+                  },
+                  "indicator:End_Time": {
+                    "@precision": "",
+                    "#text": ""
+                  }
+                },
+                "indicator:Observable": {
+                  "@id": "",
+                  "cybox:Object": {
+                    "@id": "",
+                    "cybox:Properties": {
+                      "@xsi:type": "",
+                      "FileObj:Hashes": {
+                        "cyboxCommon:Hash": {
+                          "cyboxCommon:Type": {
+                            "@xsi:type": "",
+                            "#text": ""
+                          },
+                          "cyboxCommon:Simple_Hash_Value": {
+                            "@condition": "",
+                            "#text": ""
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "indicator:Indicated_TTP": [
+                  {
+                    "stixCommon:Confidence": {
+                      "stixCommon:Value": {
+                        "@xsi:type": "",
+                        "#text": ""
+                      }
+                    },
+                    "stixCommon:TTP": {
+                      "@id": "",
+                      "@timestamp": "",
+                      "@xsi:type": "",
+                      "ttp:Title": "",
+                      "ttp:Description": ""
+                    }
+                  }
+                ],
+                "indicator:Confidence": {
+                  "stixCommon:Value": "",
+                  "stixCommon:Description": ""
+                },
+                "indicator:Producer": {
+                  "stixCommon:Description": "",
+                  "stixCommon:References": {
+                    "stixCommon:Reference": ""
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "parameters": [
+        {
+          "title": "Risk Rule List",
+          "description": "Risk Rule List based on which you want to retrieve risk list information for file(s) from Recorded Future. You can choose from the following options: Reported by Insikt Group, Historically Reported in Threat List, Linked to Cyber Attack, Linked to Malware, Linked to Attack Vector, Linked to Vulnerability, Malware SSL Certificate Fingerprint, Positive Malware Verdict, Trending in Recorded Future Analyst Community, or Threat Researcher.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "risk_rule_list",
+          "options": [
+            "Reported by Insikt Group",
+            "Historically Reported in Threat List",
+            "Linked to Cyber Attack",
+            "Linked to Malware",
+            "Linked to Attack Vector",
+            "Linked to Vulnerability",
+            "Malware SSL Certificate Fingerprint",
+            "Positive Malware Verdict",
+            "Trending in Recorded Future Analyst Community",
+            "Threat Researcher"
+          ],
+          "value": "Reported by Insikt Group"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "search_file",
+      "title": "Search Filehash",
+      "description": "Searches for and retrieves information about intel threat context for all filehashes or specific filehash(es) (based on the filter criteria you have specified) from Recorded Future",
+      "category": "investigation",
+      "annotation": "search_filehash",
+      "output_schema": {
+        "metadata": {
+          "entries": [
+            {
+              "key": "",
+              "item": {
+                "entries": [
+                  {
+                    "key": "",
+                    "item": {
+                      "entries": [
+                        {
+                          "key": "",
+                          "label": "",
+                          "type": ""
+                        }
+                      ],
+                      "type": ""
+                    },
+                    "label": "",
+                    "type": ""
+                  }
+                ],
+                "type": ""
+              },
+              "label": "",
+              "type": ""
+            }
+          ]
+        },
+        "counts": {
+          "total": "",
+          "returned": ""
+        },
+        "data": {
+          "results": [
+            {
+              "intelCard": "",
+              "analystNotes": [],
+              "relatedEntities": [
+                {
+                  "entities": [
+                    {
+                      "count": "",
+                      "entity": {
+                        "type": "",
+                        "name": "",
+                        "id": ""
+                      }
+                    }
+                  ],
+                  "type": ""
+                }
+              ],
+              "entity": {
+                "type": "",
+                "name": "",
+                "id": ""
+              },
+              "timestamps": {
+                "lastSeen": "",
+                "firstSeen": ""
+              },
+              "counts": [
+                {
+                  "count": "",
+                  "date": ""
+                }
+              ],
+              "sightings": [
+                {
+                  "published": "",
+                  "fragment": "",
+                  "title": "",
+                  "source": "",
+                  "url": "",
+                  "type": ""
+                }
+              ],
+              "threatLists": [],
+              "hashAlgorithm": "",
+              "risk": {
+                "rules": "",
+                "score": "",
+                "evidenceDetails": [
+                  {
+                    "rule": "",
+                    "timestamp": "",
+                    "evidenceString": "",
+                    "criticality": "",
+                    "criticalityLabel": ""
+                  }
+                ],
+                "riskSummary": "",
+                "criticalityLabel": "",
+                "riskString": "",
+                "criticality": ""
+              },
+              "metrics": [
+                {
+                  "value": "",
+                  "type": ""
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "parameters": [
+        {
+          "title": "Fields",
+          "description": "Fields that you want to include in the output. You can choose from the following options: Analysis Notes, Entity, Counts, Intel Card URL, Metrics, Related Entities, Risk, Sightings, Threat Lists, and Event Timestamps. By default, this option is set as Entity.",
+          "tooltip": "Fields to include in output",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "name": "fields",
+          "options": [
+            "Analyst Notes",
+            "Entity",
+            "Counts",
+            "Intel Card URL",
+            "Metrics",
+            "Related Entities",
+            "Hash Algorithm",
+            "Risk",
+            "Sightings",
+            "Threat Lists",
+            "Event Timestamps"
+          ],
+          "value": [
+            "Risk"
+          ]
+        },
+        {
+          "title": "Metadata",
+          "description": "Select this option to annotate the response with additional metadata explaining the response data elements. By default, this option is set as True.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "metadata",
+          "value": true
+        },
+        {
+          "title": "Limit",
+          "description": "Maximum number of results that this operation should return. By default, this option is set as 10.",
+          "required": false,
+          "tooltip": "Maximum number of records",
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit",
+          "value": 10
+        },
+        {
+          "title": "From",
+          "description": "Records from offset.",
+          "tooltip": "Records from offset",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "from"
+        },
+        {
+          "title": "Risk Score",
+          "description": "Filter the search results by the risk score, which are integer values from 0 to 100. For example, Risk Score=[20,90] // same as 20 <= Risk Score <= 90 ",
+          "tooltip": "Eg. [20,90] same as 20 <= riskScore <= 90, [20,90) same as 20 <= riskScore < 90",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "riskScore"
+        },
+        {
+          "title": "Algorithm",
+          "description": "Filter the search results by the hash algorithm. You can choose from the following options: CRC-32, CTPH, MD5, SHA-1, SHA-256, or SHA-512.",
+          "tooltip": "Hash algorithm",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "algorithm",
+          "options": [
+            "CRC-32",
+            "CTPH",
+            "MD5",
+            "SHA-1",
+            "SHA-256",
+            "SHA-512"
+          ],
+          "value": "CRC-32"
+        },
+        {
+          "title": "First Seen",
+          "description": "Filter the search results by the first see date (all ElasticSearch compatible date formats are valid).For example, 2017-03-14T18:01:18.750Z, 2017-01-01, 2017/01/01",
+          "tooltip": "First seen date, all Elasticsearch compatible date formats are valid Eg. 2017-03-14T18:01:18.750Z, 2017-01-01",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "firstSeen"
+        },
+        {
+          "title": "Last Seen",
+          "description": "Filter the search results by the last see date (all ElasticSearch compatible date formats are valid). For example, 2017-03-14T18:01:18.750Z, 2017-01-01, 2017/01/01",
+          "tooltip": "Last seen date, all Elasticsearch compatible date formats are valid Eg. 2017-03-14T18:01:18.750Z, 2017-01-01",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "lastSeen"
+        },
+        {
+          "title": "List ID",
+          "description": "Vulnerability ID from Recorded Future.For example, hash:1d724f95c61f1055f0d02c2154bbccd3",
+          "tooltip": "Vulnerability ID from Recorded Future Eg. hash:1d724f95c61f1055f0d02c2154bbccd3",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "list"
+        },
+        {
+          "title": "Risk Rule",
+          "description": "Risk Rule List based on which you want to retrieve risk list information for filehash(es) from Recorded Future.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "riskRule",
+          "options": [
+            "Reported by Insikt Group",
+            "Historically Reported in Threat List",
+            "Linked to Cyber Attack",
+            "Linked to Malware",
+            "Linked to Attack Vector",
+            "Linked to Vulnerability",
+            "Malware SSL Certificate Fingerprint",
+            "Positive Malware Verdict",
+            "Trending in Recorded Future Analyst Community",
+            "Threat Researcher"
+          ],
+          "value": "Reported by Insikt Group"
+        },
+        {
+          "title": "Order By",
+          "description": "Order the search results by this filter criteria. You can choose from the following options: Created, Criticality, First Seen, Last Seen, Modified, Risk Score, Rules, Seven Days Hits, Sixty Days Hits, or Total Hits.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "orderby",
+          "options": [
+            "Created",
+            "Criticality",
+            "First Seen",
+            "Last Seen",
+            "Modified",
+            "Risk Score",
+            "Rules",
+            "Seven Days Hits",
+            "Sixty Days Hits",
+            "Total Hits"
+          ],
+          "value": "Created"
+        },
+        {
+          "title": "Direction",
+          "description": "Arrange the search results either in the Ascending order or Descending order based on the risk score.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "direction",
+          "options": [
+            "Ascending",
+            "Descending"
+          ],
+          "value": "Descending"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "lookup_vulnerability",
+      "title": "Lookup Vulnerability",
+      "description": "Looks up the intel threat context for a vulnerability and retrieves its information from Recorded future, based on the CVE Identifier ID or Recorded Future ID you have specified",
+      "category": "investigation",
+      "annotation": "get_vulnerability",
+      "output_schema": {
+        "metadata": {
+          "entries": []
+        },
+        "data": {
+          "entity": {
+            "name": "",
+            "type": "",
+            "id": "",
+            "description": ""
+          },
+          "threatLists": [],
+          "counts": [
+            {
+              "count": "",
+              "date": ""
+            }
+          ],
+          "intelCard": "",
+          "relatedEntities": [
+            {
+              "type": "",
+              "entities": [
+                {
+                  "entity": {
+                    "name": "",
+                    "type": "",
+                    "id": ""
+                  },
+                  "count": ""
+                }
+              ]
+            }
+          ],
+          "cpe22uri": [],
+          "cpe": [],
+          "timestamps": {
+            "firstSeen": "",
+            "lastSeen": ""
+          },
+          "cvss": {
+            "lastModified": "",
+            "published": ""
+          },
+          "analystNotes": [],
+          "nvdDescription": "",
+          "sightings": [
+            {
+              "url": "",
+              "title": "",
+              "type": "",
+              "published": "",
+              "fragment": "",
+              "source": ""
+            }
+          ],
+          "commonNames": [],
+          "risk": {
+            "evidenceDetails": [
+              {
+                "criticality": "",
+                "criticalityLabel": "",
+                "rule": "",
+                "evidenceString": "",
+                "timestamp": ""
+              }
+            ],
+            "rules": "",
+            "riskSummary": "",
+            "score": "",
+            "criticalityLabel": "",
+            "criticality": "",
+            "riskString": ""
+          },
+          "relatedLinks": [],
+          "metrics": [
+            {
+              "type": "",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "parameters": [
+        {
+          "title": "CVE/RF ID",
+          "description": "CVE Identifier ID or Recorded Future ID whose reputation you want to retrieve from Recorded Future. For example CVE IDs: CVE-2018-8811, CVE-2018-8810. RF ID = Vga53v",
+          "required": true,
+          "tooltip": "Eg. CVE-2018-8811, CVE-2018-8810, Vga53v",
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "cve_id"
+        },
+        {
+          "title": "Fields",
+          "description": "Fields that you want to include in the output.",
+          "tooltip": "Fields to include in output",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "name": "fields",
+          "options": [
+            "National Vulnerability Database description",
+            "Analyst Notes",
+            "Common Names",
+            "Entity",
+            "Counts",
+            "Common Platform Enumeration",
+            "Common Platform Enumeration 2.2 URI",
+            "Common Vulnerability Scoring System",
+            "Intel Card URL",
+            "Metrics",
+            "Related Entities",
+            "Related Links",
+            "Risk",
+            "Sightings",
+            "Threat Lists",
+            "Event Timestamps"
+          ],
+          "value": [
+            "Risk"
+          ]
+        },
+        {
+          "title": "Metadata",
+          "description": "(Optional) Select this option to annotate the response with additional metadata explaining the response data elements. By default, this option is set as True.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "metadata",
+          "value": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "vulnerability_risklist",
+      "title": "Get vulnerability Risk List",
+      "description": "Retrieves the risk list information for the vulnerability(ies) from Recorded Future, based on the risk rule list you have specified",
+      "category": "investigation",
+      "annotation": "get_risk_list",
+      "output_schema": {
+        "stix:STIX_Package": {
+          "@id": "",
+          "@timestamp": "",
+          "@version": "",
+          "@xmlns": "",
+          "@xmlns:RF": "",
+          "@xmlns:cybox": "",
+          "@xmlns:et": "",
+          "@xmlns:stix": "",
+          "@xmlns:stixCommon": "",
+          "stix:STIX_Header": {
+            "stix:Description": ""
+          },
+          "stix:Exploit_Targets": {
+            "stixCommon:Exploit_Target": [
+              {
+                "@id": "",
+                "@timestamp": "",
+                "@xmlns:xsi": "",
+                "@xsi:type": "",
+                "et:Title": "",
+                "et:Description": "",
+                "et:Vulnerability": {
+                  "et:CVE_ID": "",
+                  "et:CVSS_Score": {
+                    "et:Overall_Score": ""
+                  },
+                  "et:Published_DateTime": "",
+                  "et:Affected_Software": {
+                    "et:Affected_Software": {
+                      "stixCommon:Observable": {
+                        "@id": "",
+                        "cybox:Title": ""
+                      }
+                    }
+                  },
+                  "et:References": {
+                    "stixCommon:Reference": ""
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "parameters": [
+        {
+          "title": "Risk Rule List",
+          "description": "Risk Rule List based on which you want to retrieve risk list information for vulnerability(ies) from Recorded Future.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "risk_rule_list",
+          "options": [
+            "Historically Reported by Insikt Group",
+            "Web Reporting Prior to CVSS Score",
+            "Cyber Exploit Signal: Critical",
+            "Cyber Exploit Signal: Important",
+            "Cyber Exploit Signal: Medium",
+            "Linked to Historical Cyber Exploit",
+            "Historically Linked to Exploit Kit",
+            "Historically Linked to Malware",
+            "Historically Linked to Remote Access Trojan",
+            "Historically Linked to Ransomware",
+            "Linked to Recent Cyber Exploit",
+            "Recently Linked to Exploit Kit",
+            "Recently Linked to Malware",
+            "Recently Linked to Remote Access Trojan",
+            "Recently Linked to Ransomware",
+            "NIST Severity: Critical",
+            "NIST Severity: High",
+            "NIST Severity: Low",
+            "NIST Severity: Medium",
+            "Web Reporting Prior to NVD Disclosure",
+            "Recently Reported by Insikt Group",
+            "Recently Linked to Penetration Testing Tools",
+            "Historically Linked to Penetration Testing Tools"
+          ],
+          "value": "Historically Reported by Insikt Group"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "search_vulnerability",
+      "title": "Search Vulnerabilities",
+      "description": "Searches for and retrieves information about intel threat context for all vulnerabilities or specific vulnerabilities(ies) (based on the filter criteria you have specified) from Recorded Futures",
+      "category": "investigation",
+      "annotation": "search_vulnerability",
+      "output_schema": {
+        "metadata": {
+          "entries": []
+        },
+        "counts": {
+          "total": "",
+          "returned": ""
+        },
+        "data": {
+          "results": [
+            {
+              "sightings": [
+                {
+                  "title": "",
+                  "type": "",
+                  "source": "",
+                  "fragment": "",
+                  "published": "",
+                  "url": ""
+                }
+              ],
+              "analystNotes": [
+                {
+                  "id": "",
+                  "source": "",
+                  "attributes": {
+                    "title": "",
+                    "context_entities": [
+                      {
+                        "name": "",
+                        "id": "",
+                        "type": ""
+                      }
+                    ],
+                    "topic": {
+                      "name": "",
+                      "id": "",
+                      "type": ""
+                    },
+                    "validated_on": "",
+                    "validation_urls": [
+                      {
+                        "name": "",
+                        "id": "",
+                        "type": ""
+                      }
+                    ],
+                    "text": "",
+                    "published": "",
+                    "note_entities": [
+                      {
+                        "name": "",
+                        "id": "",
+                        "description": "",
+                        "type": ""
+                      }
+                    ]
+                  }
+                }
+              ],
+              "cvss": {
+                "integrity": "",
+                "accessVector": "",
+                "availability": "",
+                "confidentiality": "",
+                "score": "",
+                "lastModified": "",
+                "published": "",
+                "accessComplexity": "",
+                "authentication": ""
+              },
+              "cpe": [],
+              "counts": [
+                {
+                  "date": "",
+                  "count": ""
+                }
+              ],
+              "commonNames": [],
+              "nvdDescription": "",
+              "relatedLinks": [],
+              "entity": {
+                "name": "",
+                "id": "",
+                "description": "",
+                "type": ""
+              },
+              "timestamps": {
+                "lastSeen": "",
+                "firstSeen": ""
+              },
+              "threatLists": [],
+              "risk": {
+                "riskSummary": "",
+                "evidenceDetails": [
+                  {
+                    "evidenceString": "",
+                    "timestamp": "",
+                    "rule": "",
+                    "criticality": "",
+                    "criticalityLabel": ""
+                  }
+                ],
+                "rules": "",
+                "criticality": "",
+                "riskString": "",
+                "criticalityLabel": "",
+                "score": ""
+              },
+              "intelCard": "",
+              "relatedEntities": [
+                {
+                  "type": "",
+                  "entities": [
+                    {
+                      "count": "",
+                      "entity": {
+                        "name": "",
+                        "id": "",
+                        "type": ""
+                      }
+                    }
+                  ]
+                }
+              ],
+              "metrics": [
+                {
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "cpe22uri": []
+            }
+          ]
+        }
+      },
+      "parameters": [
+        {
+          "title": "Free Text",
+          "description": "Free text (not regex) string matching which list IDs are returned as the search result.",
+          "required": false,
+          "tooltip": "Free text search",
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "freetext"
+        },
+        {
+          "title": "Fields",
+          "description": "Fields that you want to include in the output.",
+          "tooltip": "Fields to include in output",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "name": "fields",
+          "options": [
+            "National Vulnerability Database description",
+            "Analyst Notes",
+            "Common Names",
+            "Entity",
+            "Counts",
+            "Common Platform Enumeration",
+            "Common Platform Enumeration 2.2 URI",
+            "Common Vulnerability Scoring System",
+            "Intel Card URL",
+            "Metrics",
+            "Related Entities",
+            "Related Links",
+            "Risk",
+            "Sightings",
+            "Threat Lists",
+            "Event Timestamps"
+          ],
+          "value": "Entity"
+        },
+        {
+          "title": "Metadata",
+          "description": "Select this option to annotate the response with additional metadata explaining the response data elements.By default, this option is set as True.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "metadata",
+          "value": true
+        },
+        {
+          "title": "Limit",
+          "description": "Maximum number of results that this operation should return. By default, this option is set as 10.",
+          "required": false,
+          "tooltip": "Maximum number of records",
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit",
+          "value": 10
+        },
+        {
+          "title": "From",
+          "description": "Records from offset.",
+          "tooltip": "Records from offset",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "from"
+        },
+        {
+          "title": "Risk Score",
+          "description": "Filter the search results by the risk score, which are integer values from 0 to 100. For example, Risk Score=[20,90] // same as 20 <= Risk Score <= 90 ",
+          "tooltip": "Eg. [20,90] same as 20 <= riskScore <= 90, [20,90) same as 20 <= riskScore < 90",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "riskScore"
+        },
+        {
+          "title": "CVSS Score",
+          "description": "Filter the search results by the common vulnerability scoring system score (CVSS score). You can enter a number between 0 to 10 as the CVSS score in the format [0,10] ",
+          "tooltip": "Common Vulnerability Scoring System Score between 0 to 10 Eg. [2,9] same as 2 <= CVSS Score <= 9, [2,9) same as 2 <= CVSS Score < 9",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "cvssScore"
+        },
+        {
+          "title": "First Seen",
+          "description": "Filter the search results by the first see date (all ElasticSearch compatible date formats are valid). For example, 2017-03-14T18:01:18.750Z, 2017-01-01, 2017/01/01",
+          "tooltip": "First seen date, all Elasticsearch compatible date formats are valid Eg. 2017-03-14T18:01:18.750Z, 2017-01-01",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "firstSeen"
+        },
+        {
+          "title": "Last Seen",
+          "description": "Filter the search results by the last see date (all ElasticSearch compatible date formats are valid).For example, 2017-03-14T18:01:18.750Z, 2017-01-01, 2017/01/01",
+          "tooltip": "Last seen date, all Elasticsearch compatible date formats are valid Eg. 2017-03-14T18:01:18.750Z, 2017-01-01",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "lastSeen"
+        },
+        {
+          "title": "List ID",
+          "description": "Vulnerability ID from Recorded Future.For example, PGW3XH",
+          "tooltip": "Vulnerability ID from Recorded Future Eg. PGW3XH",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "list"
+        },
+        {
+          "title": "Risk Rule",
+          "description": "Risk Rule List based on which you want to retrieve risk list information for vulnerability(ies) from Recorded Future.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "riskRule",
+          "options": [
+            "Historically Reported by Insikt Group",
+            "Web Reporting Prior to CVSS Score",
+            "Cyber Exploit Signal: Critical",
+            "Cyber Exploit Signal: Important",
+            "Cyber Exploit Signal: Medium",
+            "Linked to Historical Cyber Exploit",
+            "Historically Linked to Exploit Kit",
+            "Historically Linked to Malware",
+            "Historically Linked to Remote Access Trojan",
+            "Historically Linked to Ransomware",
+            "Linked to Recent Cyber Exploit",
+            "Recently Linked to Exploit Kit",
+            "Recently Linked to Malware",
+            "Recently Linked to Remote Access Trojan",
+            "Recently Linked to Ransomware",
+            "NIST Severity: Critical",
+            "NIST Severity: High",
+            "NIST Severity: Low",
+            "NIST Severity: Medium",
+            "Web Reporting Prior to NVD Disclosure",
+            "Recently Reported by Insikt Group",
+            "Recently Linked to Penetration Testing Tools",
+            "Historically Linked to Penetration Testing Tools"
+          ],
+          "value": "Historically Reported by Insikt Group"
+        },
+        {
+          "title": "Order By",
+          "description": "Order the search results by this filter criteria. You can choose from the following options: Created, Criticality, First Seen, Last Seen, Modified, Risk Score, Rules, Seven Days Hits, Sixty Days Hits, or Total Hits.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "orderby",
+          "options": [
+            "Created",
+            "Criticality",
+            "First Seen",
+            "Last Seen",
+            "Modified",
+            "Risk Score",
+            "Rules",
+            "Seven Days Hits",
+            "Sixty Days Hits",
+            "Total Hits"
+          ],
+          "value": "Created"
+        },
+        {
+          "title": "Direction",
+          "description": "Arrange the search results either in the Ascending order or Descending order based on the risk score.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "direction",
+          "options": [
+            "Ascending",
+            "Descending"
+          ],
+          "value": "Descending"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "lookup_url",
+      "title": "Lookup URL",
+      "description": "Looks up the intel threat context for a URL and retrieves its information from Recorded future, based on the URL you have specified",
+      "category": "investigation",
+      "annotation": "get_url_reputation",
+      "output_schema": {
+        "metadata": {
+          "entries": []
+        },
+        "data": {
+          "relatedEntities": [],
+          "risk": {
+            "rules": "",
+            "criticalityLabel": "",
+            "riskSummary": "",
+            "criticality": "",
+            "score": "",
+            "riskString": "",
+            "evidenceDetails": [
+              {
+                "evidenceString": "",
+                "criticalityLabel": "",
+                "criticality": "",
+                "rule": "",
+                "timestamp": ""
+              }
+            ]
+          },
+          "analystNotes": [
+            {
+              "attributes": {
+                "validated_on": "",
+                "published": "",
+                "validation_urls": [
+                  {
+                    "type": "",
+                    "id": "",
+                    "name": ""
+                  }
+                ],
+                "title": "",
+                "note_entities": [
+                  {
+                    "type": "",
+                    "id": "",
+                    "name": ""
+                  }
+                ],
+                "text": "",
+                "topic": {
+                  "type": "",
+                  "id": "",
+                  "name": ""
+                },
+                "tlp": ""
+              },
+              "source": "",
+              "id": ""
+            }
+          ],
+          "entity": {
+            "type": "",
+            "id": "",
+            "name": ""
+          },
+          "timestamps": {
+            "firstSeen": "",
+            "lastSeen": ""
+          },
+          "metrics": [
+            {
+              "type": "",
+              "value": ""
+            }
+          ],
+          "counts": [
+            {
+              "date": "",
+              "count": ""
+            }
+          ],
+          "sightings": []
+        }
+      },
+      "parameters": [
+        {
+          "title": "URL",
+          "description": "URL for which you want to retrieve threat information from Recorded Future.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "url"
+        },
+        {
+          "title": "Fields",
+          "description": "(Optional) Fields that you want to include in the output. You can choose from the following options: Analyst Notes, Entity, Counts, Metrics, Related Entities, Risk, Sightings, or Event Timestamps.",
+          "tooltip": "Fields to include in output",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "name": "fields",
+          "options": [
+            "Analyst Notes",
+            "Entity",
+            "Counts",
+            "Metrics",
+            "Related Entities",
+            "Risk",
+            "Sightings",
+            "Event Timestamps"
+          ],
+          "value": [
+            "Risk"
+          ]
+        },
+        {
+          "title": "Metadata",
+          "description": "(Optional) Select this option to annotate the response with additional metadata explaining the response data elements. By default, this option is set as True.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "metadata",
+          "value": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "url_risklist",
+      "title": "Get URL Risk List",
+      "description": "Retrieves the risk list information for the URL(s) from Recorded Future, based on the risk rule list you have specified",
+      "category": "investigation",
+      "annotation": "get_risk_list",
+      "output_schema": {
+        "stix:STIX_Package": {
+          "@id": "",
+          "@timestamp": "",
+          "@version": "",
+          "@xmlns": "",
+          "@xmlns:RF": "",
+          "@xmlns:URIObj": "",
+          "@xmlns:cybox": "",
+          "@xmlns:indicator": "",
+          "@xmlns:stix": "",
+          "@xmlns:stixCommon": "",
+          "@xmlns:stixVocabs": "",
+          "@xmlns:ttp": "",
+          "stix:STIX_Header": {
+            "stix:Description": ""
+          },
+          "stix:Indicators": {
+            "stix:Indicator": [
+              {
+                "@id": "",
+                "@timestamp": "",
+                "@xmlns:xsi": "",
+                "@xsi:type": "",
+                "indicator:Title": "",
+                "indicator:Type": {
+                  "@xsi:type": "",
+                  "#text": ""
+                },
+                "indicator:Description": "",
+                "indicator:Valid_Time_Position": {
+                  "indicator:Start_Time": {
+                    "@precision": "",
+                    "#text": ""
+                  },
+                  "indicator:End_Time": {
+                    "@precision": "",
+                    "#text": ""
+                  }
+                },
+                "indicator:Observable": {
+                  "@id": "",
+                  "cybox:Object": {
+                    "@id": "",
+                    "cybox:Properties": {
+                      "@xsi:type": "",
+                      "URIObj:Value": {
+                        "@condition": "",
+                        "#text": ""
+                      }
+                    }
+                  }
+                },
+                "indicator:Indicated_TTP": [
+                  {
+                    "stixCommon:Confidence": {
+                      "stixCommon:Value": {
+                        "@xsi:type": "",
+                        "#text": ""
+                      }
+                    },
+                    "stixCommon:TTP": {
+                      "@id": "",
+                      "@timestamp": "",
+                      "@xsi:type": "",
+                      "ttp:Title": "",
+                      "ttp:Description": ""
+                    }
+                  }
+                ],
+                "indicator:Confidence": {
+                  "stixCommon:Value": "",
+                  "stixCommon:Description": ""
+                },
+                "indicator:Producer": {
+                  "stixCommon:Description": "",
+                  "stixCommon:References": {
+                    "stixCommon:Reference": ""
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "parameters": [
+        {
+          "title": "Risk Rule List",
+          "description": "Risk Rule List based on which you want to retrieve risk list information for URL(s) from Recorded Future. You can choose from the following options: C&C URL, Compromised URL, Historically Reported as a Defanged URL, Historically Reported in Threat List, Large, Active Phishing URL, Ransomware Distribution URL, or Recently Reported as e Defanged URL.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "risk_rule_list",
+          "options": [
+            "C&C URL",
+            "Compromised URL",
+            "Historically Reported as a Defanged URL",
+            "Historically Reported in Threat List",
+            "Active Phishing URL",
+            "Ransomware Distribution URL",
+            "Recently Reported as e Defanged URL"
+          ],
+          "value": "C&C URL"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "search_url",
+      "title": "Search URL",
+      "description": "Searches for and retrieves information about intel threat context for all URLs or specific URL(s) (based on the filter criteria you have specified) from Recorded Future",
+      "category": "investigation",
+      "annotation": "search_url",
+      "output_schema": {
+        "data": {
+          "results": [
+            {
+              "risk": {
+                "score": "",
+                "riskString": "",
+                "criticalityLabel": "",
+                "riskSummary": "",
+                "evidenceDetails": [
+                  {
+                    "evidenceString": "",
+                    "criticality": "",
+                    "timestamp": "",
+                    "criticalityLabel": "",
+                    "rule": "",
+                    "mitigationString":""
+                  }
+                ],
+                "rules": "",
+                "criticality": ""
+              },
+              "analystNotes": [],
+              "entity": {
+                "name": "",
+                "type": "",
+                "id": ""
+              },
+              "sightings": [],
+              "metrics": [
+                {
+                  "value": "",
+                  "type": ""
+                }
+              ],
+              "relatedEntities": [],
+              "timestamps": {
+                "firstSeen": "",
+                "lastSeen": ""
+              },
+              "counts": [
+                {
+                  "count": "",
+                  "date": ""
+                }
+              ]
+            }
+          ]
+        },
+        "metadata": {
+          "entries": []
+        },
+        "counts": {
+          "returned": "",
+          "total": ""
+        }
+      },
+      "parameters": [
+        {
+          "title": "Fields",
+          "description": "Fields that you want to include in the output. You can choose from the following options: Analyst Notes, Entity, Counts, Metrics, Related Entities, Risk, Sightings, or Event Timestamps.",
+          "tooltip": "Fields to include in output",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "name": "fields",
+          "options": [
+            "Analyst Notes",
+            "Entity",
+            "Counts",
+            "Metrics",
+            "Related Entities",
+            "Risk",
+            "Sightings",
+            "Event Timestamps"
+          ],
+          "value": "Entity"
+        },
+        {
+          "title": "Metadata",
+          "description": "Select this option to annotate the response with additional metadata explaining the response data elements.By default, this option is set as True.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "metadata",
+          "value": true
+        },
+        {
+          "title": "Limit",
+          "description": "Maximum number of results that this operation should return. By default, this option is set as 10.",
+          "required": false,
+          "tooltip": "Maximum number of records",
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit",
+          "value": 10
+        },
+        {
+          "title": "From",
+          "description": "Records from offset.",
+          "tooltip": "Records from offset",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "from"
+        },
+        {
+          "title": "Risk Score",
+          "description": "Filter the search results by the risk score, which are integer values from 0 to 100. For example, Risk Score=[20,90] // same as 20 <= Risk Score <= 90",
+          "tooltip": "Eg. [20,90] same as 20 <= riskScore <= 90, [20,90) same as 20 <= riskScore < 90",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "riskScore"
+        },
+        {
+          "title": "First Seen",
+          "description": "Filter the search results by the first see date (all ElasticSearch compatible date formats are valid). For example, 2017-03-14T18:01:18.750Z, 2017-01-01, 2017/01/01",
+          "tooltip": "First seen date, all Elasticsearch compatible date formats are valid Eg. 2017-03-14T18:01:18.750Z, 2017-01-01",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "firstSeen"
+        },
+        {
+          "title": "Last Seen",
+          "description": "Filter the search results by the last see date (all ElasticSearch compatible date formats are valid). For example, 2017-03-14T18:01:18.750Z, 2017-01-01, 2017/01/01",
+          "tooltip": "Last seen date, all Elasticsearch compatible date formats are valid Eg. 2017-03-14T18:01:18.750Z, 2017-01-01",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "lastSeen"
+        },
+        {
+          "title": "List ID",
+          "description": "Vulnerability ID from Recorded Future. For example, url:http://examplendv.com/niugufvt4",
+          "tooltip": "Vulnerability ID Eg. url:http://example.com",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "list"
+        },
+        {
+          "title": "Risk Rule",
+          "description": "Risk Rule List based on which you want to retrieve risk list information for URL(s) from Recorded Future. You can choose from the following options: C&C URL, Compromised URL, Historically Reported as a Defanged URL, Historically Reported in Threat List, Active Phishing URL, Ransomware Distribution URL, or Recently Reported as e Defanged URL.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "riskRule",
+          "options": [
+            "C&C URL",
+            "Compromised URL",
+            "Historically Reported as a Defanged URL",
+            "Historically Reported in Threat List",
+            "Active Phishing URL",
+            "Ransomware Distribution URL",
+            "Recently Reported as e Defanged URL"
+          ],
+          "value": "C&C URL"
+        },
+        {
+          "title": "Order By",
+          "description": "Order the search results by this filter criteria.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "orderby",
+          "options": [
+            "Created",
+            "Criticality",
+            "First Seen",
+            "Last Seen",
+            "Modified",
+            "Risk Score",
+            "Rules",
+            "Seven Days Hits",
+            "Sixty Days Hits",
+            "Total Hits"
+          ],
+          "value": "Created"
+        },
+        {
+          "title": "Direction",
+          "description": "Arrange the search results either in the Ascending order or Descending order based on the risk score.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "direction",
+          "options": [
+            "Ascending",
+            "Descending"
+          ],
+          "value": "Descending"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "lookup_malware",
+      "title": "Lookup Malware",
+      "description": "Looks up the intel threat context for a Malware and retrieves its information from Recorded future, based on the Malware ID you have specified",
+      "output_schema": {
+        "metadata": {
+          "entries": []
+        },
+        "data": {
+          "sightings": [
+            {
+              "fragment": "",
+              "source": "",
+              "published": "",
+              "url": "",
+              "title": "",
+              "type": ""
+            }
+          ],
+          "counts": [
+            {
+              "count": "",
+              "date": ""
+            }
+          ],
+          "entity": {
+            "type": "",
+            "id": "",
+            "name": ""
+          },
+          "metrics": [
+            {
+              "value": "",
+              "type": ""
+            }
+          ],
+          "intelCard": "",
+          "analystNotes": [],
+          "timestamps": {
+            "firstSeen": "",
+            "lastSeen": ""
+          },
+          "categories": [
+            {
+              "type": "",
+              "id": "",
+              "name": ""
+            }
+          ],
+          "relatedEntities": [
+            {
+              "type": "",
+              "entities": [
+                {
+                  "count": "",
+                  "entity": {
+                    "type": "",
+                    "id": "",
+                    "name": ""
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "parameters": [
+        {
+          "title": "ID",
+          "description": "ID of the Malware for which you want to retrieve threat information from Recorded Future.",
+          "tooltip": "Malware ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "malware_id"
+        },
+        {
+          "title": "Fields",
+          "description": "(Optional) Fields that you want to include in the output. You can choose from the following options: Analyst Notes, Entity, Counts, Metrics, Intel Card URL, Related Entities, Sightings, Categories, or Event Timestamps.",
+          "tooltip": "Fields to include in output",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "name": "fields",
+          "options": [
+            "Analyst Notes",
+            "Entity",
+            "Counts",
+            "Metrics",
+            "Intel Card URL",
+            "Related Entities",
+            "Sightings",
+            "Categories",
+            "Event Timestamps"
+          ],
+          "value": [
+            "Risk"
+          ]
+        },
+        {
+          "title": "Metadata",
+          "description": "(Optional) Select this option to annotate the response with additional metadata explaining the response data elements. By default, this option is set as True.",
+          "tooltip": "Include Metadata",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "metadata",
+          "value": true
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "search_malware",
+      "title": "Search Malware",
+      "description": "Searches for and retrieves information about intel threat context for all Malwares or specific Malware(s) (based on the filter criteria you have specified) from Recorded Future",
+      "output_schema": {
+        "data": {
+          "results": [
+            {
+              "metrics": [
+                {
+                  "value": "",
+                  "type": ""
+                }
+              ],
+              "categories": [],
+              "entity": {
+                "name": "",
+                "type": "",
+                "id": ""
+              },
+              "timestamps": {
+                "firstSeen": "",
+                "lastSeen": ""
+              },
+              "analystNotes": [],
+              "counts": [],
+              "intelCard": "",
+              "relatedEntities": [],
+              "sightings": []
+            }
+          ]
+        },
+        "counts": {
+          "returned": "",
+          "total": ""
+        },
+        "metadata": {
+          "entries": []
+        }
+      },
+      "parameters": [
+        {
+          "title": "Free Text",
+          "description": "Free text (not regex) string matching which list IDs are returned as the search result.",
+          "required": false,
+          "tooltip": "Free text search",
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "freetext"
+        },
+        {
+          "title": "Fields",
+          "description": "Fields that you want to include in the output. You can choose from the following options: Analyst Notes, Entity, Counts, Metrics, Intel Card URL, Related Entities, Sightings, Categories, or Event Timestamps.",
+          "tooltip": "Fields to include in output",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "multiselect",
+          "name": "fields",
+          "options": [
+            "Analyst Notes",
+            "Entity",
+            "Counts",
+            "Metrics",
+            "Intel Card URL",
+            "Related Entities",
+            "Sightings",
+            "Categories",
+            "Event Timestamps"
+          ],
+          "value": "Entity"
+        },
+        {
+          "title": "Metadata",
+          "description": "Select this option to annotate the response with additional metadata explaining the response data elements.By default, this option is set as True.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "checkbox",
+          "name": "metadata",
+          "value": true
+        },
+        {
+          "title": "Limit",
+          "description": "Maximum number of results that this operation should return. By default, this option is set as 10.",
+          "required": false,
+          "tooltip": "Maximum number of records",
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit",
+          "value": 10
+        },
+        {
+          "title": "From",
+          "description": "Records from offset.",
+          "tooltip": "Records from offset",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "from"
+        },
+        {
+          "title": "First Seen",
+          "description": "Filter the search results by the first see date (all ElasticSearch compatible date formats are valid). For example, 2017-03-14T18:01:18.750Z, 2017-01-01, 2017/01/01",
+          "tooltip": "First seen date, all Elasticsearch compatible date formats are valid Eg. 2017-03-14T18:01:18.750Z, 2017-01-01",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "firstSeen"
+        },
+        {
+          "title": "Last Seen",
+          "description": "Filter the search results by the last see date (all ElasticSearch compatible date formats are valid).For example, 2017-03-14T18:01:18.750Z, 2017-01-01, 2017/01/01",
+          "tooltip": "Last seen date, all Elasticsearch compatible date formats are valid Eg. 2017-03-14T18:01:18.750Z, 2017-01-01",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "lastSeen"
+        },
+        {
+          "title": "List ID",
+          "description": "Vulnerability ID from Recorded Future. For example, Ps4Y1A",
+          "tooltip": "Vulnerability ID Eg. Ps4Y1A",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "list"
+        },
+        {
+          "title": "Order By",
+          "description": "Order the search results by this filter criteria. You can choose from the following options: Created, Criticality, First Seen, Last Seen, Modified, Risk Score, Rules, Seven Days Hits, Sixty Days Hits, or Total Hits.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "orderby",
+          "options": [
+            "Created",
+            "Criticality",
+            "First Seen",
+            "Last Seen",
+            "Modified",
+            "Risk Score",
+            "Rules",
+            "Seven Days Hits",
+            "Sixty Days Hits",
+            "Total Hits"
+          ],
+          "value": "Created"
+        },
+        {
+          "title": "Direction",
+          "description": "Arrange the search results either in the Ascending order or Descending order based on metrics (counts of recent references and metric values for various risk rules).",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "direction",
+          "options": [
+            "Ascending",
+            "Descending"
+          ],
+          "value": "Descending"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_alert",
+      "title": "Get Alert",
+      "description": "Retrieves details for an alert which is generated in Recorded Future, based on the alert ID you have specified",
+      "category": "investigation",
+      "annotation": "get_alert",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Alert ID",
+          "description": "ID of the alert generated on Recorded Future for which you want to retrieve information from Recorded Future.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "alert_ID"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "search_alerts",
+      "title": "Search Alerts",
+      "description": "Searches for and retrieves notification information for all alerts or specific alert(s) (based on the filter criteria you have specified) generated on Recorded Future",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Triggered",
+          "description": "DateTime when the alert was generated on Recorded Future. All Elasticsearch compatible date formats are valid. Relative time expressions are also supported, such as -2d for two days prior to today and yesterday. As with absolute time references, both ends of the range still need to be specified. For example, to search for alerts that fired within the last 24 hrs, use triggered = [-24h,].",
+          "tooltip": "This is datetime when the alert was generated",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "triggered"
+        },
+        {
+          "title": "Assignee",
+          "description": "Filter the search results by the name of the assignee to whom the alert was assigned in Recorded Future, using the email address associated with that user account.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "assignee"
+        },
+        {
+          "title": "Status",
+          "description": "Status of the alert. You can choose from the following options: Unassigned, Assigned, Actionable, No Action, or Tuning.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "options": [
+            "Unassigned",
+            "Assigned",
+            "Actionable",
+            "No Action",
+            "Tuning"
+          ],
+          "value": "Assigned",
+          "name": "status"
+        },
+        {
+          "title": "Alert Rule ID",
+          "description": "Recorded Future's Alert Rule ID that is associated with the alert notification.",
+          "tooltip": "Recorded Future alert ID associated with the alert instance",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "alertRule"
+        },
+        {
+          "title": "Free Text",
+          "description": "Free text (not regex) string matching which list IDs are returned as the search result.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "freetext"
+        },
+        {
+          "title": "Limit",
+          "description": "Maximum number of results that this operation should return.By default, this option is set as 10.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit",
+          "value": 10
+        },
+        {
+          "title": "From",
+          "description": "Records from offset.",
+          "tooltip": "Records from offset",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "from"
+        },
+        {
+          "title": "Order By",
+          "description": "Order the search results by this filter criteria. Currently, only the Triggered option is available.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "orderby",
+          "options": [
+            "Triggered"
+          ],
+          "value": "Triggered"
+        },
+        {
+          "title": "Direction",
+          "description": "Arrange the search results either in the Ascending order or Descending order.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "name": "direction",
+          "options": [
+            "Ascending",
+            "Descending"
+          ],
+          "value": "Descending"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "search_alert_rule",
+      "title": "Search Alert Rules",
+      "description": "Searches for and retrieves information about all alert rules or specific alert rule(s) (based on the filter criteria you have specified) from Recorded Future",
+      "output_schema": {},
+      "parameters": [
+        {
+          "title": "Free Text",
+          "description": "Free text (not regex) string matching which list IDs are returned as the search result.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "freetext"
+        },
+        {
+          "title": "Limit",
+          "description": "Maximum number of results that this operation should return. By default, this option is set as 10.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_riskrules",
+      "title": "Get Risk Rules",
+      "description": "Retrieves the risk rules for IP, Domain, URL, File or Vulnerability from Recorded Future, based on the filter criteria you have specified",
+      "output_schema": {
+        "data": {
+          "results": [
+            {
+              "description": "",
+              "criticality": "",
+              "criticalityLabel": "",
+              "count": "",
+              "name": ""
+            }
+          ]
+        }
+      },
+      "parameters": [
+        {
+          "title": "Risk Rules For",
+          "description": "Risk rules have to be retrieved for the selected input from Recorded Future. You can choose from the following options: IP, Domain, URL, File, or Vulnerability.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "options": [
+            "IP",
+            "Domain",
+            "URL",
+            "File",
+            "Vulnerability"
+          ],
+          "name": "type",
+          "value": "IP"
+        }
+      ],
+      "enabled": true
+    }
+  ]
+}
