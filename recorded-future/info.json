@@ -1,9 +1,9 @@
 {
   "name": "recorded-future",
   "label": "Recorded Future",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Recorded Future is a threat intelligence product that automatically collects and analyzes threat intelligence from technical, open, and dark web sources to provide invaluable context for faster human analysis and real-time integration with your existing security systems.",
-  "publisher": "CyberSponse",
+  "publisher": "Fortinet",
   "cs_approved": true,
   "cs_compatible": true,
   "category": "Threat Intelligence",
@@ -2589,7 +2589,7 @@
                     "timestamp": "",
                     "criticalityLabel": "",
                     "rule": "",
-                    "mitigationString":""
+                    "mitigationString": ""
                   }
                 ],
                 "rules": "",
@@ -3261,6 +3261,1362 @@
           ],
           "name": "type",
           "value": "IP"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_maps_list",
+      "annotation": "get_maps_list",
+      "category": "investigation",
+      "title": "Get Maps List",
+      "description": "Retrieves information about the maps available for the user.",
+      "output_schema": {
+        "data": [
+          {
+            "name": "",
+            "type": "",
+            "organization": {
+              "id": "",
+              "name": ""
+            },
+            "url": ""
+          }
+        ]
+      },
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "operation": "get_threat_map",
+      "annotation": "get_threat_map",
+      "category": "investigation",
+      "title": "Get Threat Map",
+      "description": "Retrieves threat map data for the enterprise's primary organization with filters specified.",
+      "output_schema": {
+        "data": {
+          "threat_map": [
+            {
+              "id": "",
+              "name": "",
+              "alias": [
+                []
+              ],
+              "categories": [],
+              "intent": "",
+              "opportunity": "",
+              "log_entries": [
+                {
+                  "watchlist": {
+                    "id": "",
+                    "name": ""
+                  },
+                  "entity": {
+                    "id": "",
+                    "name": ""
+                  },
+                  "severity": "",
+                  "axis": "",
+                  "date": ""
+                }
+              ]
+            }
+          ],
+          "date": ""
+        }
+      },
+      "parameters": [
+        {
+          "title": "Actors",
+          "description": "Specify the actors based on which you want to filter the result. You can specify multiple actors as csv.",
+          "tooltip": "Specify the actors based on which you want to filter the result. You can specify multiple actors as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "actors"
+        },
+        {
+          "title": "Categories",
+          "description": "Specify the categories based on which you want to filter the result. You can specify multiple categories as csv.",
+          "tooltip": "Specify the categories based on which you want to filter the result. You can specify multiple categories as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "categories"
+        },
+        {
+          "title": "Watch Lists",
+          "description": "Specify the watchlist based on which you want to filter the result. You can specify multiple watchlist as csv.",
+          "tooltip": "Specify the watchlist based on which you want to filter the result. You can specify multiple watchlist as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "watchlists"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_threat_map_by_org_id",
+      "annotation": "get_threat_map_by_org_id",
+      "category": "investigation",
+      "title": "Get Threat Map By Org ID",
+      "description": "Retrieves threat map data for a specific organization with filters specified.",
+      "output_schema": {
+        "data": {
+          "threat_map": [
+            {
+              "id": "",
+              "name": "",
+              "alias": [
+                []
+              ],
+              "categories": [],
+              "intent": "",
+              "opportunity": "",
+              "log_entries": [
+                {
+                  "watchlist": {
+                    "id": "",
+                    "name": ""
+                  },
+                  "entity": {
+                    "id": "",
+                    "name": ""
+                  },
+                  "severity": "",
+                  "axis": "",
+                  "date": ""
+                }
+              ]
+            }
+          ],
+          "date": ""
+        }
+      },
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the organization ID whose threat map data to retrieve.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "orgId"
+        },
+        {
+          "title": "Actors",
+          "description": "Specify the actors based on which you want to filter the result. You can specify multiple actors as csv.",
+          "tooltip": "Specify the actors based on which you want to filter the result. You can specify multiple actors as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "actors"
+        },
+        {
+          "title": "Categories",
+          "description": "Specify the categories based on which you want to filter the result. You can specify multiple categories as csv.",
+          "tooltip": "Specify the categories based on which you want to filter the result. You can specify multiple categories as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "categories"
+        },
+        {
+          "title": "Watch Lists",
+          "description": "Specify the watchlist based on which you want to filter the result. You can specify multiple watchlist as csv.",
+          "tooltip": "Specify the watchlist based on which you want to filter the result. You can specify multiple watchlist as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "watchlists"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_malware_threat_map",
+      "annotation": "get_malware_threat_map",
+      "category": "investigation",
+      "title": "Get Malware Threat Map",
+      "description": "Retrieves malware threat map data for the enterprise's primary organization with filters specified.",
+      "output_schema": {
+        "data": {
+          "threat_map": [
+            {
+              "id": "",
+              "name": "",
+              "alias": [
+                []
+              ],
+              "categories": [],
+              "prevalence": "",
+              "opportunity": "",
+              "log_entries": [
+                {
+                  "watchlist": {
+                    "id": "",
+                    "name": ""
+                  },
+                  "entity": {
+                    "id": "",
+                    "name": ""
+                  },
+                  "severity": "",
+                  "axis": "",
+                  "date": ""
+                }
+              ]
+            }
+          ],
+          "date": ""
+        }
+      },
+      "parameters": [
+        {
+          "title": "Malware",
+          "description": "Specify the malware based on which you want to filter the result. You can specify multiple malware as csv.",
+          "tooltip": "Specify the malware based on which you want to filter the result. You can specify multiple malware as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "malware"
+        },
+        {
+          "title": "Categories",
+          "description": "Specify the categories based on which you want to filter the result. You can specify multiple categories as csv.",
+          "tooltip": "Specify the categories based on which you want to filter the result. You can specify multiple categories as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "categories"
+        },
+        {
+          "title": "Watch Lists",
+          "description": "Specify the watchlist based on which you want to filter the result. You can specify multiple watchlist as csv.",
+          "tooltip": "Specify the watchlist based on which you want to filter the result. You can specify multiple watchlist as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "watchlists"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_malware_threat_map_by_org_id",
+      "annotation": "get_malware_threat_map_by_org_id",
+      "category": "investigation",
+      "title": "Get Malware Threat Map By Org ID",
+      "description": "Retrieves malware threat map data for a specific organization with filters specified.",
+      "output_schema": {
+        "data": {
+          "threat_map": [
+            {
+              "id": "",
+              "name": "",
+              "alias": [
+                []
+              ],
+              "categories": [],
+              "prevalence": "",
+              "opportunity": "",
+              "log_entries": [
+                {
+                  "watchlist": {
+                    "id": "",
+                    "name": ""
+                  },
+                  "entity": {
+                    "id": "",
+                    "name": ""
+                  },
+                  "severity": "",
+                  "axis": "",
+                  "date": ""
+                }
+              ]
+            }
+          ],
+          "date": ""
+        }
+      },
+      "parameters": [
+        {
+          "title": "Organization ID",
+          "description": "Specify the organization ID whose malware threat map data to retrieve.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "orgId"
+        },
+        {
+          "title": "Malware",
+          "description": "Specify the malware based on which you want to filter the result. You can specify multiple malware as csv.",
+          "tooltip": "Specify the malware based on which you want to filter the result. You can specify multiple malware as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "malware"
+        },
+        {
+          "title": "Categories",
+          "description": "Specify the categories based on which you want to filter the result. You can specify multiple categories as csv.",
+          "tooltip": "Specify the categories based on which you want to filter the result. You can specify multiple categories as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "categories"
+        },
+        {
+          "title": "Watch Lists",
+          "description": "Specify the watchlist based on which you want to filter the result. You can specify multiple watchlist as csv.",
+          "tooltip": "Specify the watchlist based on which you want to filter the result. You can specify multiple watchlist as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "watchlists"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_threat_actors_list",
+      "annotation": "get_threat_actors_list",
+      "category": "investigation",
+      "title": "Get Threat Actors List",
+      "description": "Retrieve a list of threat actors.",
+      "output_schema": {
+        "data": [
+          {
+            "id": "",
+            "type": "",
+            "attributes": {
+              "name": "",
+              "common_names": [
+                []
+              ],
+              "alias": [
+                []
+              ],
+              "categories": [
+                {
+                  "id": "",
+                  "name": ""
+                }
+              ]
+            }
+          }
+        ],
+        "counts": {
+          "returned": "",
+          "total": ""
+        },
+        "next_offset": ""
+      },
+      "parameters": [
+        {
+          "title": "Name",
+          "description": "Specify the list name whose details to retrieve.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "name"
+        },
+        {
+          "title": "Limit",
+          "description": "Specify the number of records to retrieve.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit"
+        },
+        {
+          "title": "Offset",
+          "description": "Specify the offset value to skip the first n element.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "offset"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_threat_actors_categories",
+      "annotation": "get_threat_actors_categories",
+      "category": "investigation",
+      "title": "Get Threat Actors Categories",
+      "description": "Retrieve threat actors categories, which can be used to filter threat map data.",
+      "output_schema": {
+        "data": [
+          {
+            "id": "",
+            "type": "",
+            "attributes": {
+              "name": "",
+              "alias": [
+                []
+              ]
+            }
+          }
+        ],
+        "counts": {
+          "returned": "",
+          "total": ""
+        }
+      },
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "operation": "get_malware_categories",
+      "annotation": "get_malware_categories",
+      "category": "investigation",
+      "title": "Get Malware Categories",
+      "description": "Retrieve malware categories, which can be used to filter malware threat map data.",
+      "output_schema": {
+        "data": [
+          {
+            "id": "",
+            "type": "",
+            "attributes": {
+              "name": "",
+              "alias": [
+                []
+              ]
+            }
+          }
+        ],
+        "counts": {
+          "returned": "",
+          "total": ""
+        }
+      },
+      "parameters": [],
+      "enabled": true
+    },
+    {
+      "operation": "get_third_party_risk_alert_by_alert_id",
+      "annotation": "get_third_party_risk_alert_by_alert_id",
+      "category": "investigation",
+      "title": "Get Third Party Risk Alert By Alert ID",
+      "description": "Retrieve detailed information about a Third Party Risk Playbook Alert with data grouped into UI-ready panels.",
+      "output_schema": {
+        "status": {
+          "status_code": "",
+          "status_message": ""
+        },
+        "data": {
+          "playbook_alert_id": "",
+          "panel_status": {
+            "status": "",
+            "priority": "",
+            "reopen": "",
+            "assignee_name": "",
+            "assignee_id": "",
+            "created": "",
+            "updated": "",
+            "case_rule_id": "",
+            "case_rule_label": "",
+            "creator_name": "",
+            "creator_id": "",
+            "owner_organisation_details": {
+              "organisations": [
+                {
+                  "organisation_id": "",
+                  "organisation_name": ""
+                }
+              ],
+              "enterprise_id": "",
+              "enterprise_name": ""
+            },
+            "entity_id": "",
+            "entity_name": "",
+            "entity_criticality": "",
+            "risk_score": "",
+            "targets": [
+              {
+                "name": ""
+              }
+            ],
+            "actions_taken": []
+          },
+          "panel_evidence_summary": {
+            "assessments": [
+              {
+                "risk_rule": "",
+                "level": "",
+                "added": "",
+                "evidence": {
+                  "summary": "",
+                  "type": "",
+                  "data": [
+                    {
+                      "id": "",
+                      "title": "",
+                      "published": "",
+                      "topic": "",
+                      "fragment": ""
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "panel_log_v2": [
+            {
+              "id": "",
+              "author_id": "",
+              "author_name": "",
+              "created": "",
+              "changes": [
+                {
+                  "old": {
+                    "id": "",
+                    "name": ""
+                  },
+                  "new": {
+                    "id": "",
+                    "name": ""
+                  },
+                  "type": ""
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "parameters": [
+        {
+          "title": "Playbook Alert ID",
+          "description": "Specify the unique ID of a specific Playbook Alert whose details to retrieve.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "playbook_alert_id"
+        },
+        {
+          "title": "Panels",
+          "description": "Specify the panels. You can specify multiple panels as csv.",
+          "tooltip": "Specify the panels. You can specify multiple panels as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "panels"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_bulk_third_party_risk_alerts",
+      "annotation": "get_bulk_third_party_risk_alerts",
+      "category": "investigation",
+      "title": "Get Bulk Third Party Risk Alerts",
+      "description": "Retrieves a detailed lookup of data panels for several alerts at once.",
+      "output_schema": {
+        "status": {
+          "status_code": "",
+          "status_message": ""
+        },
+        "data": [
+          {
+            "playbook_alert_id": "",
+            "panel_status": {
+              "status": "",
+              "priority": "",
+              "reopen": "",
+              "assignee_name": "",
+              "assignee_id": "",
+              "created": "",
+              "updated": "",
+              "case_rule_id": "",
+              "case_rule_label": "",
+              "creator_name": "",
+              "creator_id": "",
+              "owner_organisation_details": {
+                "organisations": [
+                  {
+                    "organisation_id": "",
+                    "organisation_name": ""
+                  }
+                ],
+                "enterprise_id": "",
+                "enterprise_name": ""
+              },
+              "entity_id": "",
+              "entity_name": "",
+              "entity_criticality": "",
+              "risk_score": "",
+              "targets": [
+                {
+                  "name": ""
+                }
+              ],
+              "actions_taken": []
+            },
+            "panel_evidence_summary": {
+              "assessments": [
+                {
+                  "risk_rule": "",
+                  "level": "",
+                  "added": "",
+                  "evidence": {
+                    "summary": "",
+                    "type": "",
+                    "data": [
+                      {
+                        "id": "",
+                        "title": "",
+                        "published": "",
+                        "topic": "",
+                        "fragment": ""
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "panel_log_v2": [
+              {
+                "id": "",
+                "author_id": "",
+                "author_name": "",
+                "created": "",
+                "changes": [
+                  {
+                    "old": {
+                      "id": "",
+                      "name": ""
+                    },
+                    "new": {
+                      "id": "",
+                      "name": ""
+                    },
+                    "type": ""
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "playbook_alert_ids",
+          "description": "Specify the playbook alert IDs whose details to retrieve. You can specify multiple playbook alert IDs as csv.",
+          "tooltip": "Specify the playbook alert IDs whose details to retrieve. You can specify multiple playbook alert IDs as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "playbook_alert_ids"
+        },
+        {
+          "title": "Panels",
+          "description": "Specify the panels. You can specify multiple panels as csv.",
+          "tooltip": "Specify the panels. You can specify multiple panels as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "panels"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_identity_novel_exposures_alert_by_alert_id",
+      "annotation": "get_identity_novel_exposures_alert_by_alert_id",
+      "category": "investigation",
+      "title": "Get Identity Novel Exposures Alert By Alert ID",
+      "description": "Retrieve detailed information about a Identity Novel Exposures Playbook Alert with data grouped into UI-ready panels.",
+      "output_schema": {
+        "status": {
+          "status_code": "",
+          "status_message": ""
+        },
+        "data": {
+          "playbook_alert_id": "",
+          "panel_status": {
+            "status": "",
+            "priority": "",
+            "assignee_name": "",
+            "assignee_id": "",
+            "created": "",
+            "updated": "",
+            "case_rule_id": "",
+            "case_rule_label": "",
+            "creator_name": "",
+            "creator_id": "",
+            "owner_organisation_details": {
+              "organisations": [
+                {
+                  "organisation_id": "",
+                  "organisation_name": ""
+                }
+              ],
+              "enterprise_id": "",
+              "enterprise_name": ""
+            },
+            "entity_id": "",
+            "entity_name": "",
+            "targets": [
+              {
+                "name": ""
+              }
+            ],
+            "actions_taken": []
+          },
+          "panel_evidence_summary": {
+            "assessments": [
+              {
+                "name": "",
+                "criticality": ""
+              }
+            ],
+            "subject": "",
+            "exposed_secret": {
+              "type": "",
+              "effectively_clear": "",
+              "hashes": [
+                {
+                  "algorithm": "",
+                  "hash": "",
+                  "hash_prefix": ""
+                }
+              ],
+              "details": {
+                "properties": [],
+                "rank": "",
+                "clear_text_value": "",
+                "clear_text_hint": ""
+              }
+            },
+            "dump": {
+              "name": "",
+              "description": ""
+            },
+            "authorization_url": "",
+            "compromised_host": {
+              "exfiltration_date": "",
+              "os": "",
+              "os_username": "",
+              "malware_file": "",
+              "timezone": "",
+              "computer_name": "",
+              "uac": "",
+              "antivirus": []
+            },
+            "malware_family": {
+              "id": "",
+              "name": ""
+            },
+            "infrastructure": {
+              "ip": ""
+            },
+            "technologies": [
+              {
+                "name": "",
+                "id": "",
+                "category": ""
+              }
+            ]
+          },
+          "panel_log_v2": [
+            {
+              "id": "",
+              "author_id": "",
+              "author_name": "",
+              "created": "",
+              "changes": [
+                {
+                  "old": {
+                    "id": "",
+                    "name": ""
+                  },
+                  "new": {
+                    "id": "",
+                    "name": ""
+                  },
+                  "type": ""
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "parameters": [
+        {
+          "title": "Playbook Alert ID",
+          "description": "Specify the unique ID of a specific Playbook Alert whose details to retrieve.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "playbook_alert_id"
+        },
+        {
+          "title": "Panels",
+          "description": "Specify the panels. You can specify multiple panels as csv.",
+          "tooltip": "Specify the panels. You can specify multiple panels as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "panels"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_bulk_identity_novel_exposures_alerts",
+      "annotation": "get_bulk_identity_novel_exposures_alerts",
+      "category": "investigation",
+      "title": "Get Bulk Identity Novel Exposures Alerts",
+      "description": "Perform a detailed lookup of data panels for several Identity Novel Exposures alerts at once.",
+      "output_schema": {
+        "status": {
+          "status_code": "",
+          "status_message": ""
+        },
+        "data": [
+          {
+            "playbook_alert_id": "",
+            "panel_status": {
+              "status": "",
+              "priority": "",
+              "assignee_name": "",
+              "assignee_id": "",
+              "created": "",
+              "updated": "",
+              "case_rule_id": "",
+              "case_rule_label": "",
+              "creator_name": "",
+              "creator_id": "",
+              "owner_organisation_details": {
+                "organisations": [
+                  {
+                    "organisation_id": "",
+                    "organisation_name": ""
+                  }
+                ],
+                "enterprise_id": "",
+                "enterprise_name": ""
+              },
+              "entity_id": "",
+              "entity_name": "",
+              "targets": [
+                {
+                  "name": ""
+                }
+              ],
+              "actions_taken": []
+            },
+            "panel_evidence_summary": {
+              "assessments": [
+                {
+                  "name": "",
+                  "criticality": ""
+                }
+              ],
+              "subject": "",
+              "exposed_secret": {
+                "type": "",
+                "effectively_clear": "",
+                "hashes": [
+                  {
+                    "algorithm": "",
+                    "hash": "",
+                    "hash_prefix": ""
+                  }
+                ],
+                "details": {
+                  "properties": [],
+                  "rank": "",
+                  "clear_text_value": "",
+                  "clear_text_hint": ""
+                }
+              },
+              "dump": {
+                "name": "",
+                "description": ""
+              },
+              "authorization_url": "",
+              "compromised_host": {
+                "exfiltration_date": "",
+                "os": "",
+                "os_username": "",
+                "malware_file": "",
+                "timezone": "",
+                "computer_name": "",
+                "uac": "",
+                "antivirus": []
+              },
+              "malware_family": {
+                "id": "",
+                "name": ""
+              },
+              "infrastructure": {
+                "ip": ""
+              },
+              "technologies": [
+                {
+                  "name": "",
+                  "id": "",
+                  "category": ""
+                }
+              ]
+            },
+            "panel_log_v2": [
+              {
+                "id": "",
+                "author_id": "",
+                "author_name": "",
+                "created": "",
+                "changes": [
+                  {
+                    "old": {
+                      "id": "",
+                      "name": ""
+                    },
+                    "new": {
+                      "id": "",
+                      "name": ""
+                    },
+                    "type": ""
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "title": "playbook_alert_ids",
+          "description": "Specify the playbook alert IDs whose details to retrieve. You can specify multiple playbook alert IDs as csv.",
+          "tooltip": "Specify the playbook alert IDs whose details to retrieve. You can specify multiple playbook alert IDs as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "playbook_alert_ids"
+        },
+        {
+          "title": "Panels",
+          "description": "Specify the panels. You can specify multiple panels as csv.",
+          "tooltip": "Specify the panels. You can specify multiple panels as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "panels"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "create_user_list",
+      "annotation": "create_user_list",
+      "category": "investigation",
+      "title": "Create User List",
+      "description": "Creates a user list based on the parameters specified.",
+      "output_schema": {
+        "id": "",
+        "name": "",
+        "type": "",
+        "created": "",
+        "updated": "",
+        "ownerId": "",
+        "ownerName": "",
+        "organisationId": "",
+        "organisationName": "",
+        "ownerOrganisationDetails": {
+          "owner_id": "",
+          "owner_name": "",
+          "organisations": [
+            {
+              "organisation_id": "",
+              "organisation_name": ""
+            }
+          ],
+          "enterprise_id": "",
+          "enterprise_name": ""
+        }
+      },
+      "parameters": [
+        {
+          "title": "Name",
+          "description": "Specify the name with which to create the user list.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "name"
+        },
+        {
+          "title": "Type",
+          "description": "Specify the type of the user list to create.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "type"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_user_lists",
+      "annotation": "get_user_lists",
+      "category": "investigation",
+      "title": "Get User Lists",
+      "description": "Retrieves lists based on a query specified.",
+      "output_schema": [
+        {
+          "id": "",
+          "name": "",
+          "type": "",
+          "created": "",
+          "updated": "",
+          "ownerId": "",
+          "ownerName": "",
+          "organisationId": "",
+          "organisationName": "",
+          "ownerOrganisationDetails": {
+            "owner_id": "",
+            "owner_name": "",
+            "organisations": [
+              {
+                "organisation_id": "",
+                "organisation_name": ""
+              }
+            ],
+            "enterprise_id": "",
+            "enterprise_name": ""
+          }
+        }
+      ],
+      "parameters": [
+        {
+          "title": "Name",
+          "description": "Specify the name of the list to retrieve.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "name"
+        },
+        {
+          "title": "Type",
+          "description": "Specify the type of the user list to retrieve.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "type"
+        },
+        {
+          "title": "Limit",
+          "description": "Specify the number of records to retrieve.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_user_list_by_list_id",
+      "annotation": "get_user_list_by_list_id",
+      "category": "investigation",
+      "title": "Get User List By List ID",
+      "description": "Retrieves basic information about a specified list ID",
+      "output_schema": {
+        "id": "",
+        "name": "",
+        "type": "",
+        "created": "",
+        "updated": "",
+        "ownerId": "",
+        "ownerName": "",
+        "organisationId": "",
+        "organisationName": "",
+        "ownerOrganisationDetails": {
+          "owner_id": "",
+          "owner_name": "",
+          "organisations": [
+            {
+              "organisation_id": "",
+              "organisation_name": ""
+            }
+          ],
+          "enterprise_id": "",
+          "enterprise_name": ""
+        }
+      },
+      "parameters": [
+        {
+          "title": "List ID",
+          "description": "Specify the list ID to retrieve.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "listId"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_user_list_status_by_list_id",
+      "annotation": "get_user_list_status_by_list_id",
+      "category": "investigation",
+      "title": "Get User List Status By List ID",
+      "description": "Retrieves status information about a specified list ID",
+      "output_schema": {
+        "size": "",
+        "status": ""
+      },
+      "parameters": [
+        {
+          "title": "List ID",
+          "description": "Specify the list ID to retrieve.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "listId"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "get_entities_by_list_id",
+      "annotation": "get_entities_by_list_id",
+      "category": "investigation",
+      "title": "Get Entities By List ID",
+      "description": "Retrieves entities on the list by list ID",
+      "output_schema": [
+        {
+          "entity": {
+            "id": "",
+            "type": "",
+            "name": ""
+          },
+          "context": {
+            "additionalProp1": {}
+          },
+          "status": "",
+          "added": ""
+        }
+      ],
+      "parameters": [
+        {
+          "title": "List ID",
+          "description": "Specify the list ID whose entities to retrieve.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "listId"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "add_entity_to_user_list",
+      "annotation": "add_entity_to_user_list",
+      "category": "investigation",
+      "title": "Add Entity To User List",
+      "description": "Add an entity to the user list.",
+      "output_schema": {
+        "result": ""
+      },
+      "parameters": [
+        {
+          "title": "List ID",
+          "description": "Specify the list ID in which to add the entity.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "listId"
+        },
+        {
+          "title": "Entity ID",
+          "description": "Specify the entity ID to add.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "id"
+        },
+        {
+          "title": "Context",
+          "description": "Specify the context with which to add the entity.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "context",
+          "value": "{\n    \"additionalProp1\": {}\n  }"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "remove_entity_from_user_list",
+      "annotation": "remove_entity_from_user_list",
+      "category": "investigation",
+      "title": "Remove Entity From User List",
+      "description": "Remove an entity from the user list.",
+      "output_schema": {
+        "result": ""
+      },
+      "parameters": [
+        {
+          "title": "List ID",
+          "description": "Specify the list ID from which to remove the entity.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "listId"
+        },
+        {
+          "title": "Entity ID",
+          "description": "Specify the entity ID to remove.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "id"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "operation": "add_ioc_to_recorded_future_intelligence_cloud",
+      "annotation": "add_ioc_to_recorded_future_intelligence_cloud",
+      "category": "investigation",
+      "title": "Add IOC To Recorded Future Intelligence Cloud",
+      "description": "Add detected IOCs to the Recorded Future Intelligence Cloud.",
+      "output_schema": {
+        "result": {
+          "status": "",
+          "debug": "",
+          "summary": {
+            "processed": {
+              "ip": "",
+              "domain": "",
+              "hash": "",
+              "vulnerability": "",
+              "url": ""
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "title": "Options",
+          "description": "Specify the options with which to add IOC To Recorded Future Intelligence Cloud.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "options",
+          "value": "{\n    \"debug\": false,\n    \"summary\": true\n  }"
+        },
+        {
+          "title": "Organization IDs",
+          "description": "Specify the organization IDs with which to add IOC To Recorded Future Intelligence Cloud. You can specify multiple organization IDs as csv.",
+          "tooltip": "Specify the organization IDs with which to add IOC To Recorded Future Intelligence Cloud. You can specify multiple organization IDs as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "organization_ids"
+        },
+        {
+          "title": "Timestamp",
+          "description": "Specify the timestamp with which to add IOC To Recorded Future Intelligence Cloud.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "datetime",
+          "name": "timestamp"
+        },
+        {
+          "title": "IOC",
+          "description": "Specify the IOC to add To Recorded Future Intelligence Cloud.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "ioc",
+          "value": "{\n        \"type\": \"ip\",\n        \"value\": \"1.2.3.4\",\n        \"field\": \"dstip\",\n        \"source_type\": \"netscreen:firewall\"\n      }"
+        },
+        {
+          "title": "Incident",
+          "description": "Specify the incident details to add To Recorded Future Intelligence Cloud.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "incident",
+          "value": "{\n        \"id\": \"28548e09-63e8-4f8b-abd4-be86207b1583\",\n        \"name\": \"Triggered Detection Rule\",\n        \"type\": \"splunk-detection-rule\"\n      }"
+        },
+        {
+          "title": "Detection",
+          "description": "Specify the detection details to add To Recorded Future Intelligence Cloud.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "json",
+          "name": "detection",
+          "value": "{\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"type\": \"detection_rule\",\n        \"sub_type\": \"sigma\"\n      }"
+        },
+        {
+          "title": "Mitre codes",
+          "description": "Specify the mitre codes details to add To Recorded Future Intelligence Cloud. You can specify multiple mitre codes as csv.",
+          "tooltip": "Specify the mitre codes details to add To Recorded Future Intelligence Cloud. You can specify multiple mitre codes as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "mitre_codes"
+        },
+        {
+          "title": "Malware's",
+          "description": "Specify the malware's to add To Recorded Future Intelligence Cloud. You can specify multiple malware's as csv.",
+          "tooltip": "Specify the malware's to add To Recorded Future Intelligence Cloud. You can specify multiple malware's as csv.",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "malwares"
         }
       ],
       "enabled": true

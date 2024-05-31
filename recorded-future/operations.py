@@ -1,5 +1,11 @@
-import requests
+""" Copyright start
+  Copyright (C) 2008 - 2024 Fortinet Inc.
+  All rights reserved.
+  FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
+  Copyright end """
+
 import xmltodict
+from requests import request, exceptions as req_exceptions
 from urllib.parse import quote, urlencode
 from .constants import *
 from connectors.core.connector import ConnectorError, get_logger
@@ -21,10 +27,11 @@ def _get_config_params(config):
     return base_url, headers, verify_ssl
 
 
-def make_rest_call(endpoint, config):
+def make_rest_call(endpoint, config, method='GET', params=None, data=None):
     try:
         url, headers, verify_ssl = _get_config_params(config)
-        response = requests.get(url + endpoint, headers=headers, verify=verify_ssl)
+        response = request(method, url=url + endpoint, headers=headers, params=params, data=data,
+                           verify=verify_ssl)
         if response.ok:
             logger.info('Successfully got response for url {}'.format(url))
             if 'json' in str(response.headers):
@@ -35,15 +42,18 @@ def make_rest_call(endpoint, config):
             logger.error(response.text)
             raise ConnectorError(
                 {'status_code': response.status_code, 'message': response.json()['error']['message']})
-    except requests.exceptions.SSLError:
-        raise ConnectorError('SSL certificate validation failed')
-    except requests.exceptions.ConnectTimeout:
-        raise ConnectorError('The request timed out while trying to connect to the server')
-    except requests.exceptions.ReadTimeout:
-        raise ConnectorError(
-            'The server did not send any data in the allotted amount of time')
-    except requests.exceptions.ConnectionError:
-        raise ConnectorError('Invalid endpoint or credentials')
+    except req_exceptions.SSLError:
+        logger.error('An SSL error occurred')
+        raise ConnectorError('An SSL error occurred')
+    except req_exceptions.ConnectionError:
+        logger.error('A connection error occurred')
+        raise ConnectorError('A connection error occurred')
+    except req_exceptions.Timeout:
+        logger.error('The request timed out')
+        raise ConnectorError('The request timed out')
+    except req_exceptions.RequestException:
+        logger.error('There was an error while handling the request')
+        raise ConnectorError('There was an error while handling the request')
     except Exception as err:
         raise ConnectorError(str(err))
 
@@ -246,6 +256,20 @@ def search_alert_rules(config, params):
         raise ConnectorError(str(err))
 
 
+def build_payload(params):
+    data = {}
+    for k, v in params.items():
+        if v:
+            if isinstance(v, list):
+                data[k] = [str(x) for x in v]
+            elif k in PARA_LIST:
+                data[k] = [x.strip() for x in str(v).split(",")]
+            else:
+                data[k] = v
+    logger.debug('data ------->{}'.format(data))
+    return data
+
+
 def get_alert(config, params):
     try:
         alert_id = params.get('alert_ID')
@@ -255,11 +279,141 @@ def get_alert(config, params):
         logger.exception(str(err))
         raise ConnectorError(str(err))
 
+
+def get_maps_list(config, params):
+    endpoint = '/threat/maps'
+    return make_rest_call(endpoint, config)
+
+
+def get_threat_map(config, params):
+    endpoint = '/threat/map/actors'
+    params = build_payload(params)
+    return make_rest_call(endpoint, config, data=params, method='POST')
+
+
+def get_threat_map_by_org_id(config, params):
+    endpoint = f'/threat/map/{params.pop("orgId")}/actors'
+    params = build_payload(params)
+    return make_rest_call(endpoint, config, data=params, method='POST')
+
+
+def get_malware_threat_map(config, params):
+    endpoint = '/threat/map/malware'
+    params = build_payload(params)
+    return make_rest_call(endpoint, config, data=params, method='POST')
+
+
+def get_malware_threat_map_by_org_id(config, params):
+    endpoint = f'/threat/map/{params.pop("orgId")}/malware'
+    params = build_payload(params)
+    return make_rest_call(endpoint, config, data=params, method='POST')
+
+
+def get_threat_actors_list(config, params):
+    endpoint = '/threat/actor/search'
+    params = build_payload(params)
+    return make_rest_call(endpoint, config, data=params, method='POST')
+
+
+def get_threat_actors_categories(config, params):
+    endpoint = '/threat/actor/categories'
+    return make_rest_call(endpoint, config)
+
+
+def get_malware_categories(config, params):
+    endpoint = '/threat/malware/categories'
+    return make_rest_call(endpoint, config)
+
+
+def get_third_party_risk_alert_by_alert_id(config, params):
+    endpoint = f'/playbook-alert/third_party_risk/{params.pop("playbook_alert_id")}'
+    params = build_payload(params)
+    return make_rest_call(endpoint, config, data=params, method='POST')
+
+
+def get_bulk_third_party_risk_alerts(config, params):
+    endpoint = f'/playbook-alert/third_party_risk'
+    params = build_payload(params)
+    return make_rest_call(endpoint, config, data=params, method='POST')
+
+
+def get_identity_novel_exposures_alert_by_alert_id(config, params):
+    endpoint = f'/playbook-alert/identity_novel_exposures/{params.pop("playbook_alert_id")}'
+    params = build_payload(params)
+    return make_rest_call(endpoint, config, data=params, method='POST')
+
+
+def get_bulk_identity_novel_exposures_alerts(config, params):
+    endpoint = f'/playbook-alert/identity_novel_exposures'
+    params = build_payload(params)
+    return make_rest_call(endpoint, config, data=params, method='POST')
+
+
+def create_user_list(config, params):
+    endpoint = f'/list/create'
+    params = build_payload(params)
+    return make_rest_call(endpoint, config, data=params, method='POST')
+
+
+def get_user_lists(config, params):
+    endpoint = f'/list/search'
+    params = build_payload(params)
+    return make_rest_call(endpoint, config, data=params, method='POST')
+
+
+def get_user_list_by_list_id(config, params):
+    endpoint = f'/list/{params.pop("listId")}/info'
+    return make_rest_call(endpoint, config)
+
+
+def get_user_list_status_by_list_id(config, params):
+    endpoint = f'/list/{params.pop("listId")}/status'
+    return make_rest_call(endpoint, config)
+
+
+def get_entities_by_list_id(config, params):
+    endpoint = f'/list/{params.pop("listId")}/entities'
+    return make_rest_call(endpoint, config)
+
+
+def add_entity_to_user_list(config, params):
+    endpoint = f'/list/{params.pop("listId")}/entity/add'
+    data = {
+        "entity": {
+            "id": params.get('id')
+        }
+    }
+    if params.get('context'):
+        data['context'] = params.get('context')
+    return make_rest_call(endpoint, config, data=data, method='POST')
+
+
+def remove_entity_from_user_list(config, params):
+    endpoint = f'/list/{params.pop("listId")}/entity/remove'
+    data = {
+        "entity": {
+            "id": params.get('id')
+        }
+    }
+    return make_rest_call(endpoint, config, data=data, method='POST')
+
+
+def add_ioc_to_recorded_future_intelligence_cloud(config, params):
+    endpoint = '/collective-insights/detections'
+    data = {}
+    if params.get('options'):
+        data['options'] = params.pop('options')
+    if params.get('organization_ids'):
+        data['organization_ids'] = [x.strip() for x in str(params.pop('organization_ids')).split(",")]
+    data['data'] = build_payload(params)
+    return make_rest_call(endpoint, config, data=data, method='POST')
+
+
 def test_connection(config):
     try:
         url, headers, verify_ssl = _get_config_params(config)
         endpoint = '{}/v2/soar/triage/contexts'.format(url)
-        response = requests.get(endpoint, headers=headers, verify=verify_ssl)
+        response = request(method='GET', url=endpoint, headers=headers, verify=verify_ssl)
         if response.ok:
             logger.info('check health executed successfully')
             return True
@@ -269,17 +423,22 @@ def test_connection(config):
             raise ConnectorError('Unauthorized')
         else:
             logger.error(response.json())
-    except requests.exceptions.SSLError:
-        raise ConnectorError('SSL certificate validation failed')
-    except requests.exceptions.ConnectTimeout:
-        raise ConnectorError('The request timed out while trying to connect to the remote server')
-    except requests.exceptions.ReadTimeout:
-        raise ConnectorError('The server did not send any data in the allotted amount of time')
-    except requests.exceptions.ConnectionError:
-        raise ConnectorError('Invalid endpoint or credentials')
+    except req_exceptions.SSLError:
+        logger.error('An SSL error occurred')
+        raise ConnectorError('An SSL error occurred')
+    except req_exceptions.ConnectionError:
+        logger.error('A connection error occurred')
+        raise ConnectorError('A connection error occurred')
+    except req_exceptions.Timeout:
+        logger.error('The request timed out')
+        raise ConnectorError('The request timed out')
+    except req_exceptions.RequestException:
+        logger.error('There was an error while handling the request')
+        raise ConnectorError('There was an error while handling the request')
     except Exception as e:
         raise ConnectorError(str(e))
     raise ConnectorError(response.json()['error']['message'])
+
 
 operations = {
     'domain_reputation': domain_reputation,
@@ -303,5 +462,24 @@ operations = {
     'get_alert': get_alert,
     'search_alerts': search_alerts,
     'get_riskrules': get_riskrules,
+    'get_maps_list': get_maps_list,
+    'get_threat_map': get_threat_map,
+    'get_threat_map_by_org_id': get_threat_map_by_org_id,
+    'get_malware_threat_map': get_malware_threat_map,
+    'get_malware_threat_map_by_org_id': get_malware_threat_map_by_org_id,
+    'get_threat_actors_list': get_threat_actors_list,
+    'get_threat_actors_categories': get_threat_actors_categories,
+    'get_malware_categories': get_malware_categories,
+    'get_third_party_risk_alert_by_alert_id': get_third_party_risk_alert_by_alert_id,
+    'get_bulk_third_party_risk_alerts': get_bulk_third_party_risk_alerts,
+    'get_identity_novel_exposures_alert_by_alert_id': get_identity_novel_exposures_alert_by_alert_id,
+    'get_bulk_identity_novel_exposures_alerts': get_bulk_identity_novel_exposures_alerts,
+    'create_user_list': create_user_list,
+    'get_user_lists': get_user_lists,
+    'get_user_list_by_list_id': get_user_list_by_list_id,
+    'get_user_list_status_by_list_id': get_user_list_status_by_list_id,
+    'get_entities_by_list_id': get_entities_by_list_id,
+    'add_entity_to_user_list': add_entity_to_user_list,
+    'remove_entity_from_user_list': remove_entity_from_user_list,
+    'add_ioc_to_recorded_future_intelligence_cloud': add_ioc_to_recorded_future_intelligence_cloud
 }
-

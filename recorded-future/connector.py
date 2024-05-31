@@ -1,3 +1,9 @@
+""" Copyright start
+  Copyright (C) 2008 - 2024 Fortinet Inc.
+  All rights reserved.
+  FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
+  Copyright end """
+
 from connectors.core.connector import Connector, ConnectorError, get_logger
 from .operations import operations, test_connection
 logger = get_logger('recorded-future')
