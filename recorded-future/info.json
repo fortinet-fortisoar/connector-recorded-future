@@ -3921,7 +3921,7 @@
       },
       "parameters": [
         {
-          "title": "playbook_alert_ids",
+          "title": "Playbook Alert IDs",
           "description": "Specify the playbook alert IDs whose details to retrieve. You can specify multiple playbook alert IDs as csv.",
           "tooltip": "Specify the playbook alert IDs whose details to retrieve. You can specify multiple playbook alert IDs as csv.",
           "required": false,
@@ -4212,7 +4212,7 @@
       },
       "parameters": [
         {
-          "title": "playbook_alert_ids",
+          "title": "Playbook Alert IDs",
           "description": "Specify the playbook alert IDs whose details to retrieve. You can specify multiple playbook alert IDs as csv.",
           "tooltip": "Specify the playbook alert IDs whose details to retrieve. You can specify multiple playbook alert IDs as csv.",
           "required": false,
@@ -4467,7 +4467,7 @@
         {
           "title": "Entity ID",
           "description": "Specify the entity ID to add.",
-          "required": false,
+          "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
@@ -4508,7 +4508,7 @@
         {
           "title": "Entity ID",
           "description": "Specify the entity ID to remove.",
-          "required": false,
+          "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
