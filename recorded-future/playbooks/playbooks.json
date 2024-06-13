@@ -3,10 +3,13 @@
   "data": [
     {
       "@type": "WorkflowCollection",
-      "name": "Sample - Recorded Future - 1.0.1",
+      "name": "Sample - Recorded Future - 2.0.0",
       "description": "Sample playbooks for \"Recorded Future\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
       "visible": true,
       "image": "/api/3/images/5c00d9120d9fd710e81c2262",
+      "recordTags": [
+        "recorded-future"
+      ],
       "workflows": [
         {
           "@type": "Workflow",
@@ -15,6 +18,9 @@
           "description": "Look up threat intel context for a URL",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -62,7 +68,7 @@
                   ],
                   "metadata": true
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "lookup_url",
                 "operationTitle": "Lookup URL",
@@ -96,6 +102,9 @@
           "description": "Get risk lists for URLs",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -132,7 +141,7 @@
                 "params": {
                   "risk_rule_list": "C&C URL"
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "url_risklist",
                 "operationTitle": "Get URL Risk List",
@@ -166,6 +175,9 @@
           "description": "Get vulnerability risk list",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -202,7 +214,7 @@
                 "params": {
                   "risk_rule_list": "Historically Reported by Insikt Group"
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "vulnerability_risklist",
                 "operationTitle": "Get vulnerability Risk List",
@@ -236,6 +248,9 @@
           "description": "Look up threat intel context for a CVE vulnerability identifier",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -257,7 +272,7 @@
                   ],
                   "metadata": true
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "lookup_vulnerability",
                 "operationTitle": "Lookup Vulnerability",
@@ -310,6 +325,9 @@
           "description": "Get IP address risk lists",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -346,7 +364,7 @@
                 "params": {
                   "risk_rule_list": "Historically Reported by Insikt Group"
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "ip_risklist",
                 "operationTitle": "Get IP Address Risk List",
@@ -380,6 +398,9 @@
           "description": "Search for a CVE vulnerabilities identifiers",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -430,7 +451,7 @@
                   "firstSeen": "",
                   "riskScore": ""
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "search_vulnerability",
                 "operationTitle": "Search Vulnerability",
@@ -464,6 +485,9 @@
           "description": "Get file hash risk lists",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -500,7 +524,7 @@
                 "params": {
                   "risk_rule_list": "Reported by Insikt Group"
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "file_risklist",
                 "operationTitle": "Get File Risk List",
@@ -534,6 +558,9 @@
           "description": "List risk rules for selected input",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -551,7 +578,7 @@
                 "params": {
                   "type": "URL"
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "get_riskrules",
                 "operationTitle": "Get Risk Rules",
@@ -604,6 +631,9 @@
           "description": "Download domain risk lists",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -640,7 +670,7 @@
                 "params": {
                   "risk_rule_list": "Recent Typosquat Similarity - DNS Sandwich"
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "domain_risklist",
                 "operationTitle": "Get Domain Risk List",
@@ -674,6 +704,9 @@
           "description": "List alert rules based on search  input",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -711,7 +744,7 @@
                   "limit": "",
                   "freetext": ""
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "search_alert_rule",
                 "operationTitle": "Search alert Rules",
@@ -745,6 +778,9 @@
           "description": "Search alert notifications",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -789,7 +825,7 @@
                   "direction": "Descending",
                   "triggered": ""
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "search_alerts",
                 "operationTitle": "Search Alert",
@@ -823,6 +859,9 @@
           "description": "Search for domains",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -872,7 +911,7 @@
                   "firstSeen": "",
                   "riskScore": ""
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "search_domain",
                 "operationTitle": "Search Domain",
@@ -906,6 +945,9 @@
           "description": "Search for IP Addresses",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -965,7 +1007,7 @@
                   "firstSeen": "",
                   "riskScore": ""
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "search_ip",
                 "operationTitle": "Search IP",
@@ -999,6 +1041,9 @@
           "description": "Lookup threat intel context for malware",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -1047,7 +1092,7 @@
                   "metadata": true,
                   "malware_id": "N9FxVL"
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "lookup_malware",
                 "operationTitle": "Lookup Malware",
@@ -1081,6 +1126,9 @@
           "description": "Search for threat intel context of malware",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -1136,7 +1184,7 @@
                   "direction": "Descending",
                   "firstSeen": ""
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "search_malware",
                 "operationTitle": "Search for Malware",
@@ -1170,6 +1218,9 @@
           "description": "Search for URLs",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -1225,7 +1276,7 @@
                   "firstSeen": "",
                   "riskScore": ""
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "search_url",
                 "operationTitle": "Search URL",
@@ -1259,6 +1310,9 @@
           "description": "Search for file reputation",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded  Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -1308,7 +1362,7 @@
                   "firstSeen": "",
                   "riskScore": ""
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "search_file",
                 "operationTitle": "Search File",
@@ -1342,6 +1396,9 @@
           "description": "Look up threat intel context for a domain",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -1391,7 +1448,7 @@
                   ],
                   "metadata": true
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "domain_reputation",
                 "operationTitle": "Get Domain Reputation",
@@ -1425,6 +1482,9 @@
           "description": "Get Alert by Alert ID",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -1461,7 +1521,7 @@
                 "params": {
                   "alert_ID": "xyz"
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "get_alert",
                 "operationTitle": "Get Alert",
@@ -1495,6 +1555,9 @@
           "description": "Look up threat intel context for IP address",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -1526,7 +1589,7 @@
                   ],
                   "metadata": true
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "ip_reputation",
                 "operationTitle": "Get IP Reputation",
@@ -1579,6 +1642,9 @@
           "description": "Look up threat intel context for a file identity hash (MD5, SHA1 or SHA-256)",
           "collection": "/api/3/workflow_collections/9f07eb76-0b7a-4165-b6e3-19e43ebd2619",
           "tag": "#Recorded Future",
+                "recordTags": [
+        "recorded-future"
+      ],
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -1629,7 +1695,7 @@
                   ],
                   "metadata": true
                 },
-                "version": "1.0.1",
+                "version": "2.0.0",
                 "connector": "recorded-future",
                 "operation": "file_reputation",
                 "operationTitle": "Get File Reputation",
@@ -1655,6 +1721,1552 @@
           ],
           "versions": [],
           "uuid": "1679406b-5078-4022-8503-f32b9cb91bde"
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "42d5f27d-5ea6-4bae-8765-baf2e3761daf",
+          "collection": "/api/3/workflow_collections/7bdbb8f2-3e9f-41ce-9fcb-a763fd1cf615",
+          "triggerLimit": null,
+          "description": "Retrieves information about the maps available for the user.",
+          "name": "Get Maps List",
+          "tag": "#Recorded Future",
+          "recordTags": [
+            "recorded-future"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/8270f6a9-8686-4b97-999c-f4ba3ef2d2ce",
+          "steps": [
+            {
+              "uuid": "8270f6a9-8686-4b97-999c-f4ba3ef2d2ce",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "85eada72-92bd-42ff-8c2a-69078296c8f4",
+                "title": "Recorded Future: Get Maps List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "0283f8d2-0549-494b-8a3f-19d3332f9b82",
+              "@type": "WorkflowStep",
+              "name": "Get Maps List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Recorded Future",
+                "config": "''",
+                "params": [],
+                "version": "2.0.0",
+                "connector": "recorded-future",
+                "operation": "get_maps_list",
+                "operationTitle": "Get Maps List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "5ebf499d-745b-485a-872b-67a67509ec98",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Maps List",
+              "sourceStep": "/api/3/workflow_steps/8270f6a9-8686-4b97-999c-f4ba3ef2d2ce",
+              "targetStep": "/api/3/workflow_steps/0283f8d2-0549-494b-8a3f-19d3332f9b82"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "2e8cd41f-598b-4a1b-8de9-d6746a0d3d76",
+          "collection": "/api/3/workflow_collections/7bdbb8f2-3e9f-41ce-9fcb-a763fd1cf615",
+          "triggerLimit": null,
+          "description": "Retrieves threat map data for the enterprise's primary organization with filters specified.",
+          "name": "Get Threat Map",
+          "tag": "#Recorded Future",
+          "recordTags": [
+
+            "recorded-future"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/c9636fb2-6043-49b1-97da-ace9d0a658c7",
+          "steps": [
+            {
+              "uuid": "c9636fb2-6043-49b1-97da-ace9d0a658c7",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "59d5e1d7-d9df-458f-8ff3-c984bfd905cb",
+                "title": "Recorded Future: Get Threat Map",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "fa8a3f15-950b-4b61-9679-ac318a9ece88",
+              "@type": "WorkflowStep",
+              "name": "Get Threat Map",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Recorded Future",
+                "config": "''",
+                "params": [],
+                "version": "2.0.0",
+                "connector": "recorded-future",
+                "operation": "get_threat_map",
+                "operationTitle": "Get Threat Map"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "a4c99a68-74c5-4d80-9417-90acfcd566dc",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Threat Map",
+              "sourceStep": "/api/3/workflow_steps/c9636fb2-6043-49b1-97da-ace9d0a658c7",
+              "targetStep": "/api/3/workflow_steps/fa8a3f15-950b-4b61-9679-ac318a9ece88"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "73bb4fa1-7b8a-4aaa-86d8-e0d32acb38e0",
+          "collection": "/api/3/workflow_collections/7bdbb8f2-3e9f-41ce-9fcb-a763fd1cf615",
+          "triggerLimit": null,
+          "description": "Retrieves threat map data for a specific organization with filters specified.",
+          "name": "Get Threat Map By Org ID",
+          "tag": "#Recorded Future",
+          "recordTags": [
+
+            "recorded-future"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/799bf723-4e43-407d-8590-7d21f14cf4af",
+          "steps": [
+            {
+              "uuid": "799bf723-4e43-407d-8590-7d21f14cf4af",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "8a52df7a-ae58-4d41-bc30-41250f748bcd",
+                "title": "Recorded Future: Get Threat Map By Org ID",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "174904f1-4abe-4ab4-8a6d-a296fb05190f",
+              "@type": "WorkflowStep",
+              "name": "Get Threat Map By Org ID",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Recorded Future",
+                "config": "''",
+                "params": [],
+                "version": "2.0.0",
+                "connector": "recorded-future",
+                "operation": "get_threat_map_by_org_id",
+                "operationTitle": "Get Threat Map By Org ID"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "010a9114-ec2e-4260-8b81-85f154118121",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Threat Map By Org ID",
+              "sourceStep": "/api/3/workflow_steps/799bf723-4e43-407d-8590-7d21f14cf4af",
+              "targetStep": "/api/3/workflow_steps/174904f1-4abe-4ab4-8a6d-a296fb05190f"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "29daf88f-fccd-431d-845f-501b29bea1bb",
+          "collection": "/api/3/workflow_collections/7bdbb8f2-3e9f-41ce-9fcb-a763fd1cf615",
+          "triggerLimit": null,
+          "description": "Retrieves malware threat map data for the enterprise's primary organization with filters specified.",
+          "name": "Get Malware Threat Map",
+          "tag": "#Recorded Future",
+          "recordTags": [
+
+            "recorded-future"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/863714a6-ff0d-4ad0-bfc5-7e4700f73468",
+          "steps": [
+            {
+              "uuid": "863714a6-ff0d-4ad0-bfc5-7e4700f73468",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "9f061426-efdd-48ae-8f34-c33cd61c66af",
+                "title": "Recorded Future: Get Malware Threat Map",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "ecd58ceb-d88b-4d3a-9d5e-446b3d257271",
+              "@type": "WorkflowStep",
+              "name": "Get Malware Threat Map",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Recorded Future",
+                "config": "''",
+                "params": [],
+                "version": "2.0.0",
+                "connector": "recorded-future",
+                "operation": "get_malware_threat_map",
+                "operationTitle": "Get Malware Threat Map"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "b7a580d8-f899-4e13-a269-742b43267285",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Malware Threat Map",
+              "sourceStep": "/api/3/workflow_steps/863714a6-ff0d-4ad0-bfc5-7e4700f73468",
+              "targetStep": "/api/3/workflow_steps/ecd58ceb-d88b-4d3a-9d5e-446b3d257271"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "688be24d-2a67-41be-ba52-0dec0548b541",
+          "collection": "/api/3/workflow_collections/7bdbb8f2-3e9f-41ce-9fcb-a763fd1cf615",
+          "triggerLimit": null,
+          "description": "Retrieves malware threat map data for a specific organization with filters specified.",
+          "name": "Get Malware Threat Map By Org ID",
+          "tag": "#Recorded Future",
+          "recordTags": [
+
+            "recorded-future"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/a22f4c69-717e-4e09-8d2e-2e16c6eca90c",
+          "steps": [
+            {
+              "uuid": "a22f4c69-717e-4e09-8d2e-2e16c6eca90c",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "76ea93b5-f88e-4247-aefd-c45bbb446861",
+                "title": "Recorded Future: Get Malware Threat Map By Org ID",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "ac4ea193-fbf9-46e5-993b-c3b49c443bc2",
+              "@type": "WorkflowStep",
+              "name": "Get Malware Threat Map By Org ID",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Recorded Future",
+                "config": "''",
+                "params": [],
+                "version": "2.0.0",
+                "connector": "recorded-future",
+                "operation": "get_malware_threat_map_by_org_id",
+                "operationTitle": "Get Malware Threat Map By Org ID"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "8239ad75-b5c8-4a31-8a54-4185606f0aca",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Malware Threat Map By Org ID",
+              "sourceStep": "/api/3/workflow_steps/a22f4c69-717e-4e09-8d2e-2e16c6eca90c",
+              "targetStep": "/api/3/workflow_steps/ac4ea193-fbf9-46e5-993b-c3b49c443bc2"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "615ae21a-0213-4700-9baf-32c85cabf24f",
+          "collection": "/api/3/workflow_collections/7bdbb8f2-3e9f-41ce-9fcb-a763fd1cf615",
+          "triggerLimit": null,
+          "description": "Retrieve a list of threat actors.",
+          "name": "Get Threat Actors List",
+          "tag": "#Recorded Future",
+          "recordTags": [
+
+            "recorded-future"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/38650458-24fb-4e73-b9c6-5accf8cf78cc",
+          "steps": [
+            {
+              "uuid": "38650458-24fb-4e73-b9c6-5accf8cf78cc",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "6ce089ec-f15b-445e-b20a-2c2f7c344178",
+                "title": "Recorded Future: Get Threat Actors List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "616fb7b3-65bc-4e05-baad-c6d16adb0c48",
+              "@type": "WorkflowStep",
+              "name": "Get Threat Actors List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Recorded Future",
+                "config": "''",
+                "params": [],
+                "version": "2.0.0",
+                "connector": "recorded-future",
+                "operation": "get_threat_actors_list",
+                "operationTitle": "Get Threat Actors List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "3df235fc-2301-49b6-aa41-14d54ce1e450",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Threat Actors List",
+              "sourceStep": "/api/3/workflow_steps/38650458-24fb-4e73-b9c6-5accf8cf78cc",
+              "targetStep": "/api/3/workflow_steps/616fb7b3-65bc-4e05-baad-c6d16adb0c48"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "7487933f-44a2-4256-a4d4-7d942b7632b2",
+          "collection": "/api/3/workflow_collections/7bdbb8f2-3e9f-41ce-9fcb-a763fd1cf615",
+          "triggerLimit": null,
+          "description": "Retrieve threat actors categories, which can be used to filter threat map data.",
+          "name": "Get Threat Actors Categories",
+          "tag": "#Recorded Future",
+          "recordTags": [
+
+            "recorded-future"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/433bd9cb-023e-456a-b632-7b9c82c1f39b",
+          "steps": [
+            {
+              "uuid": "433bd9cb-023e-456a-b632-7b9c82c1f39b",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "52e38dbc-47d3-407b-921b-954b2b1e9f57",
+                "title": "Recorded Future: Get Threat Actors Categories",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "3da64108-8320-4039-bc7c-6ec0c5c65951",
+              "@type": "WorkflowStep",
+              "name": "Get Threat Actors Categories",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Recorded Future",
+                "config": "''",
+                "params": [],
+                "version": "2.0.0",
+                "connector": "recorded-future",
+                "operation": "get_threat_actors_categories",
+                "operationTitle": "Get Threat Actors Categories"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "cf428439-f58c-446a-8953-69a5d7d3f55d",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Threat Actors Categories",
+              "sourceStep": "/api/3/workflow_steps/433bd9cb-023e-456a-b632-7b9c82c1f39b",
+              "targetStep": "/api/3/workflow_steps/3da64108-8320-4039-bc7c-6ec0c5c65951"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "83001be3-ae52-4d97-ae22-1d1e103fab17",
+          "collection": "/api/3/workflow_collections/7bdbb8f2-3e9f-41ce-9fcb-a763fd1cf615",
+          "triggerLimit": null,
+          "description": "Retrieve malware categories, which can be used to filter malware threat map data.",
+          "name": "Get Malware Categories",
+          "tag": "#Recorded Future",
+          "recordTags": [
+
+            "recorded-future"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/77832984-c46b-4db5-b28a-ebd3f88ad4bd",
+          "steps": [
+            {
+              "uuid": "77832984-c46b-4db5-b28a-ebd3f88ad4bd",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "8afb8b41-2b7e-470f-8c17-27339debd279",
+                "title": "Recorded Future: Get Malware Categories",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "5a0b8698-25e2-4967-b2e2-4a106fd68631",
+              "@type": "WorkflowStep",
+              "name": "Get Malware Categories",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Recorded Future",
+                "config": "''",
+                "params": [],
+                "version": "2.0.0",
+                "connector": "recorded-future",
+                "operation": "get_malware_categories",
+                "operationTitle": "Get Malware Categories"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "c6328931-28c0-44d0-987f-c1e2b574ca75",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Malware Categories",
+              "sourceStep": "/api/3/workflow_steps/77832984-c46b-4db5-b28a-ebd3f88ad4bd",
+              "targetStep": "/api/3/workflow_steps/5a0b8698-25e2-4967-b2e2-4a106fd68631"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "c7d5e89e-7c4f-4707-b9a7-ac39393d6378",
+          "collection": "/api/3/workflow_collections/7bdbb8f2-3e9f-41ce-9fcb-a763fd1cf615",
+          "triggerLimit": null,
+          "description": "Retrieve detailed information about a Third Party Risk Playbook Alert with data grouped into UI-ready panels.",
+          "name": "Get Third Party Risk Alert By Alert ID",
+          "tag": "#Recorded Future",
+          "recordTags": [
+
+            "recorded-future"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/d3c7c8f8-bc30-425c-85b6-0e21cd2251c0",
+          "steps": [
+            {
+              "uuid": "d3c7c8f8-bc30-425c-85b6-0e21cd2251c0",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "42a70180-a652-4cdc-bd0e-1519841c37e1",
+                "title": "Recorded Future: Get Third Party Risk Alert By Alert ID",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "3449b665-530a-4696-97b4-4e6b903ee00c",
+              "@type": "WorkflowStep",
+              "name": "Get Third Party Risk Alert By Alert ID",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Recorded Future",
+                "config": "''",
+                "params": [],
+                "version": "2.0.0",
+                "connector": "recorded-future",
+                "operation": "get_third_party_risk_alert_by_alert_id",
+                "operationTitle": "Get Third Party Risk Alert By Alert ID"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "3b6d853d-200e-4551-9c88-60def3f62269",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Third Party Risk Alert By Alert ID",
+              "sourceStep": "/api/3/workflow_steps/d3c7c8f8-bc30-425c-85b6-0e21cd2251c0",
+              "targetStep": "/api/3/workflow_steps/3449b665-530a-4696-97b4-4e6b903ee00c"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "2d56276a-6fca-4f61-8638-71ea1480afdc",
+          "collection": "/api/3/workflow_collections/7bdbb8f2-3e9f-41ce-9fcb-a763fd1cf615",
+          "triggerLimit": null,
+          "description": "Retrieves a detailed lookup of data panels for several alerts at once.",
+          "name": "Get Bulk Third Party Risk Alerts",
+          "tag": "#Recorded Future",
+          "recordTags": [
+
+            "recorded-future"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f8badcb6-13d6-47ec-913f-6e89dc478886",
+          "steps": [
+            {
+              "uuid": "f8badcb6-13d6-47ec-913f-6e89dc478886",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "b4123f27-634e-4867-9aea-8be12aef777f",
+                "title": "Recorded Future: Get Bulk Third Party Risk Alerts",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "ae4a7d2d-63a8-4b65-adc1-aee7f57f0211",
+              "@type": "WorkflowStep",
+              "name": "Get Bulk Third Party Risk Alerts",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Recorded Future",
+                "config": "''",
+                "params": [],
+                "version": "2.0.0",
+                "connector": "recorded-future",
+                "operation": "get_bulk_third_party_risk_alerts",
+                "operationTitle": "Get Bulk Third Party Risk Alerts"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "04b5177d-4efa-43a2-abab-a1f508b264d7",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Bulk Third Party Risk Alerts",
+              "sourceStep": "/api/3/workflow_steps/f8badcb6-13d6-47ec-913f-6e89dc478886",
+              "targetStep": "/api/3/workflow_steps/ae4a7d2d-63a8-4b65-adc1-aee7f57f0211"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "356af28b-db1b-4908-93ca-82c41b37b18c",
+          "collection": "/api/3/workflow_collections/7bdbb8f2-3e9f-41ce-9fcb-a763fd1cf615",
+          "triggerLimit": null,
+          "description": "Retrieve detailed information about a Identity Novel Exposures Playbook Alert with data grouped into UI-ready panels.",
+          "name": "Get Identity Novel Exposures Alert By Alert ID",
+          "tag": "#Recorded Future",
+          "recordTags": [
+
+            "recorded-future"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/598df67f-f2e0-48b9-a551-9d792200649c",
+          "steps": [
+            {
+              "uuid": "598df67f-f2e0-48b9-a551-9d792200649c",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "a6b447b3-fcb9-4d22-91b9-61e118be9c10",
+                "title": "Recorded Future: Get Identity Novel Exposures Alert By Alert ID",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "cc214be7-d2d0-4403-88b9-91bfd28b085d",
+              "@type": "WorkflowStep",
+              "name": "Get Identity Novel Exposures Alert By Alert ID",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Recorded Future",
+                "config": "''",
+                "params": [],
+                "version": "2.0.0",
+                "connector": "recorded-future",
+                "operation": "get_identity_novel_exposures_alert_by_alert_id",
+                "operationTitle": "Get Identity Novel Exposures Alert By Alert ID"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "7389316a-bf71-4c8f-b3b7-09b5bad2a051",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Identity Novel Exposures Alert By Alert ID",
+              "sourceStep": "/api/3/workflow_steps/598df67f-f2e0-48b9-a551-9d792200649c",
+              "targetStep": "/api/3/workflow_steps/cc214be7-d2d0-4403-88b9-91bfd28b085d"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "00d1d648-cd75-4c19-a7d6-94169b1ae63c",
+          "collection": "/api/3/workflow_collections/7bdbb8f2-3e9f-41ce-9fcb-a763fd1cf615",
+          "triggerLimit": null,
+          "description": "Perform a detailed lookup of data panels for several Identity Novel Exposures alerts at once.",
+          "name": "Get Bulk Identity Novel Exposures Alerts",
+          "tag": "#Recorded Future",
+          "recordTags": [
+
+            "recorded-future"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/1becb0bb-f1ba-49e4-93f8-5d113976cc91",
+          "steps": [
+            {
+              "uuid": "1becb0bb-f1ba-49e4-93f8-5d113976cc91",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "290eb8fb-cc0d-4fae-b080-ece6a54c0b1d",
+                "title": "Recorded Future: Get Bulk Identity Novel Exposures Alerts",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "c7576006-9983-4604-ba69-fdabb0f5d6cd",
+              "@type": "WorkflowStep",
+              "name": "Get Bulk Identity Novel Exposures Alerts",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Recorded Future",
+                "config": "''",
+                "params": [],
+                "version": "2.0.0",
+                "connector": "recorded-future",
+                "operation": "get_bulk_identity_novel_exposures_alerts",
+                "operationTitle": "Get Bulk Identity Novel Exposures Alerts"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "68b929d0-b6e7-43fd-b051-9495937e116f",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Bulk Identity Novel Exposures Alerts",
+              "sourceStep": "/api/3/workflow_steps/1becb0bb-f1ba-49e4-93f8-5d113976cc91",
+              "targetStep": "/api/3/workflow_steps/c7576006-9983-4604-ba69-fdabb0f5d6cd"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "e7151581-ebef-45c0-866c-8d2f41c2baa7",
+          "collection": "/api/3/workflow_collections/7bdbb8f2-3e9f-41ce-9fcb-a763fd1cf615",
+          "triggerLimit": null,
+          "description": "Creates a user list based on the parameters specified.",
+          "name": "Create User List",
+          "tag": "#Recorded Future",
+          "recordTags": [
+
+            "recorded-future"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/2f08ff20-b759-461e-859d-0fbf92e7aaa8",
+          "steps": [
+            {
+              "uuid": "2f08ff20-b759-461e-859d-0fbf92e7aaa8",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "b40883cb-af19-4a63-9d0f-24ced1505d8f",
+                "title": "Recorded Future: Create User List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "45ba197e-1ee3-417e-963c-83624121fe0b",
+              "@type": "WorkflowStep",
+              "name": "Create User List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Recorded Future",
+                "config": "''",
+                "params": [],
+                "version": "2.0.0",
+                "connector": "recorded-future",
+                "operation": "create_user_list",
+                "operationTitle": "Create User List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "a5aa52af-07fc-4a92-b5ce-2125de33a3eb",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create User List",
+              "sourceStep": "/api/3/workflow_steps/2f08ff20-b759-461e-859d-0fbf92e7aaa8",
+              "targetStep": "/api/3/workflow_steps/45ba197e-1ee3-417e-963c-83624121fe0b"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "9b4c0ece-c45a-4261-b297-bbaab9f0e50b",
+          "collection": "/api/3/workflow_collections/7bdbb8f2-3e9f-41ce-9fcb-a763fd1cf615",
+          "triggerLimit": null,
+          "description": "Retrieves lists based on a query specified.",
+          "name": "Get User Lists",
+          "tag": "#Recorded Future",
+          "recordTags": [
+
+            "recorded-future"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/380d3524-a821-48c5-bd3d-0558dfdd7942",
+          "steps": [
+            {
+              "uuid": "380d3524-a821-48c5-bd3d-0558dfdd7942",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "7206b455-7ee2-4377-9e94-e444c76fb1e7",
+                "title": "Recorded Future: Get User Lists",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "2f67a468-9f29-458b-80db-786e78b0b0be",
+              "@type": "WorkflowStep",
+              "name": "Get User Lists",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Recorded Future",
+                "config": "''",
+                "params": [],
+                "version": "2.0.0",
+                "connector": "recorded-future",
+                "operation": "get_user_lists",
+                "operationTitle": "Get User Lists"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "08ccb3d0-95a0-4906-a4fd-898d9eee7304",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get User Lists",
+              "sourceStep": "/api/3/workflow_steps/380d3524-a821-48c5-bd3d-0558dfdd7942",
+              "targetStep": "/api/3/workflow_steps/2f67a468-9f29-458b-80db-786e78b0b0be"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "6f03ee5a-8617-4fad-91ba-bb301b0075f0",
+          "collection": "/api/3/workflow_collections/7bdbb8f2-3e9f-41ce-9fcb-a763fd1cf615",
+          "triggerLimit": null,
+          "description": "Retrieves basic information about a specified list ID",
+          "name": "Get User List By List ID",
+          "tag": "#Recorded Future",
+          "recordTags": [
+
+            "recorded-future"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/2d27c453-1a66-4434-b313-933414dd4ab7",
+          "steps": [
+            {
+              "uuid": "2d27c453-1a66-4434-b313-933414dd4ab7",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "7e1f854e-b526-471f-9014-343e92054384",
+                "title": "Recorded Future: Get User List By List ID",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "a0fa7af4-13fc-49ab-8c46-f98b14199842",
+              "@type": "WorkflowStep",
+              "name": "Get User List By List ID",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Recorded Future",
+                "config": "''",
+                "params": [],
+                "version": "2.0.0",
+                "connector": "recorded-future",
+                "operation": "get_user_list_by_list_id",
+                "operationTitle": "Get User List By List ID"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "a83a4462-2da5-425b-93f6-e5e31ff9cacd",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get User List By List ID",
+              "sourceStep": "/api/3/workflow_steps/2d27c453-1a66-4434-b313-933414dd4ab7",
+              "targetStep": "/api/3/workflow_steps/a0fa7af4-13fc-49ab-8c46-f98b14199842"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "33868d37-69c3-4f1c-a918-88142c8b348d",
+          "collection": "/api/3/workflow_collections/7bdbb8f2-3e9f-41ce-9fcb-a763fd1cf615",
+          "triggerLimit": null,
+          "description": "Retrieves status information about a specified list ID",
+          "name": "Get User List Status By List ID",
+          "tag": "#Recorded Future",
+          "recordTags": [
+
+            "recorded-future"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/66ceb900-4df7-4077-815c-07979934d48f",
+          "steps": [
+            {
+              "uuid": "66ceb900-4df7-4077-815c-07979934d48f",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "e6801136-9c50-484b-aa32-28e8196d1931",
+                "title": "Recorded Future: Get User List Status By List ID",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "3723f82c-3ed5-4b64-b368-3bd0e037fa44",
+              "@type": "WorkflowStep",
+              "name": "Get User List Status By List ID",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Recorded Future",
+                "config": "''",
+                "params": [],
+                "version": "2.0.0",
+                "connector": "recorded-future",
+                "operation": "get_user_list_status_by_list_id",
+                "operationTitle": "Get User List Status By List ID"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "b71b995c-caa1-42b5-b9ef-e9459c8e0722",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get User List Status By List ID",
+              "sourceStep": "/api/3/workflow_steps/66ceb900-4df7-4077-815c-07979934d48f",
+              "targetStep": "/api/3/workflow_steps/3723f82c-3ed5-4b64-b368-3bd0e037fa44"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "2b4f2b4d-d38a-41c5-a1bd-a571ee0f5c2e",
+          "collection": "/api/3/workflow_collections/7bdbb8f2-3e9f-41ce-9fcb-a763fd1cf615",
+          "triggerLimit": null,
+          "description": "Retrieves entities on the list by list ID",
+          "name": "Get Entities By List ID",
+          "tag": "#Recorded Future",
+          "recordTags": [
+
+            "recorded-future"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/ba68e9f3-0114-4c4e-9da4-f9b71499262c",
+          "steps": [
+            {
+              "uuid": "ba68e9f3-0114-4c4e-9da4-f9b71499262c",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "bc699006-9283-40df-b4b9-d1b010a3d6d5",
+                "title": "Recorded Future: Get Entities By List ID",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "947b3f04-e153-4e65-84fa-cc5dc9684970",
+              "@type": "WorkflowStep",
+              "name": "Get Entities By List ID",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Recorded Future",
+                "config": "''",
+                "params": [],
+                "version": "2.0.0",
+                "connector": "recorded-future",
+                "operation": "get_entities_by_list_id",
+                "operationTitle": "Get Entities By List ID"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "7e06cd10-9273-4332-8cf1-55543d62c287",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Entities By List ID",
+              "sourceStep": "/api/3/workflow_steps/ba68e9f3-0114-4c4e-9da4-f9b71499262c",
+              "targetStep": "/api/3/workflow_steps/947b3f04-e153-4e65-84fa-cc5dc9684970"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "6ba400c5-dc85-48b5-98b3-c7b7166bfd21",
+          "collection": "/api/3/workflow_collections/7bdbb8f2-3e9f-41ce-9fcb-a763fd1cf615",
+          "triggerLimit": null,
+          "description": "Add an entity to the user list.",
+          "name": "Add Entity To User List",
+          "tag": "#Recorded Future",
+          "recordTags": [
+
+            "recorded-future"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/f47e09ee-7556-49dd-a6f4-e95d8b967ad3",
+          "steps": [
+            {
+              "uuid": "f47e09ee-7556-49dd-a6f4-e95d8b967ad3",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "86fb86f4-fdfe-4b88-a35c-e63062c05a9f",
+                "title": "Recorded Future: Add Entity To User List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "66ba273a-6770-459c-a448-c1e3b5918801",
+              "@type": "WorkflowStep",
+              "name": "Add Entity To User List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Recorded Future",
+                "config": "''",
+                "params": {
+                  "context": "{\n    \"additionalProp1\": {}\n  }"
+                },
+                "version": "2.0.0",
+                "connector": "recorded-future",
+                "operation": "add_entity_to_user_list",
+                "operationTitle": "Add Entity To User List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "ba7281fb-c264-46c0-9d29-e71bce12bbd5",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Add Entity To User List",
+              "sourceStep": "/api/3/workflow_steps/f47e09ee-7556-49dd-a6f4-e95d8b967ad3",
+              "targetStep": "/api/3/workflow_steps/66ba273a-6770-459c-a448-c1e3b5918801"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "d7dc1d08-847d-4daa-b95f-e6d3f4c07741",
+          "collection": "/api/3/workflow_collections/7bdbb8f2-3e9f-41ce-9fcb-a763fd1cf615",
+          "triggerLimit": null,
+          "description": "Remove an entity from the user list.",
+          "name": "Remove Entity From User List",
+          "tag": "#Recorded Future",
+          "recordTags": [
+
+            "recorded-future"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/c97f112a-b2f3-4899-9948-2d4a98a5d7c3",
+          "steps": [
+            {
+              "uuid": "c97f112a-b2f3-4899-9948-2d4a98a5d7c3",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "ac5b7045-0de0-4e73-8b09-9714ba0f9244",
+                "title": "Recorded Future: Remove Entity From User List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "70dadf05-39e2-4c77-b985-8db8ed8c1084",
+              "@type": "WorkflowStep",
+              "name": "Remove Entity From User List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Recorded Future",
+                "config": "''",
+                "params": [],
+                "version": "2.0.0",
+                "connector": "recorded-future",
+                "operation": "remove_entity_from_user_list",
+                "operationTitle": "Remove Entity From User List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "e24153e2-5b6b-4d88-a31b-3464c87d71b3",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Remove Entity From User List",
+              "sourceStep": "/api/3/workflow_steps/c97f112a-b2f3-4899-9948-2d4a98a5d7c3",
+              "targetStep": "/api/3/workflow_steps/70dadf05-39e2-4c77-b985-8db8ed8c1084"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "b708a49d-f903-4924-b47c-36ee382cadf4",
+          "collection": "/api/3/workflow_collections/7bdbb8f2-3e9f-41ce-9fcb-a763fd1cf615",
+          "triggerLimit": null,
+          "description": "Add detected IOCs to the Recorded Future Intelligence Cloud.",
+          "name": "Add IOC To Recorded Future Intelligence Cloud",
+          "tag": "#Recorded Future",
+          "recordTags": [
+
+            "recorded-future"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/8daacfb2-4382-4336-bf05-15505dcd28d3",
+          "steps": [
+            {
+              "uuid": "8daacfb2-4382-4336-bf05-15505dcd28d3",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "a19a628a-6ea7-4929-beed-3359c639e524",
+                "title": "Recorded Future: Add IOC To Recorded Future Intelligence Cloud",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "9a2c35fb-1209-46f2-ad65-2b0408c5bf07",
+              "@type": "WorkflowStep",
+              "name": "Add IOC To Recorded Future Intelligence Cloud",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Recorded Future",
+                "config": "''",
+                "params": {
+                  "options": "{\n    \"debug\": false,\n    \"summary\": true\n  }",
+                  "ioc": "{\n        \"type\": \"ip\",\n        \"value\": \"1.2.3.4\",\n        \"field\": \"dstip\",\n        \"source_type\": \"netscreen:firewall\"\n      }",
+                  "incident": "{\n        \"id\": \"28548e09-63e8-4f8b-abd4-be86207b1583\",\n        \"name\": \"Triggered Detection Rule\",\n        \"type\": \"splunk-detection-rule\"\n      }",
+                  "detection": "{\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"type\": \"detection_rule\",\n        \"sub_type\": \"sigma\"\n      }"
+                },
+                "version": "2.0.0",
+                "connector": "recorded-future",
+                "operation": "add_ioc_to_recorded_future_intelligence_cloud",
+                "operationTitle": "Add IOC To Recorded Future Intelligence Cloud"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "f562c3aa-3be7-4d38-8b86-48efc85685df",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Add IOC To Recorded Future Intelligence Cloud",
+              "sourceStep": "/api/3/workflow_steps/8daacfb2-4382-4336-bf05-15505dcd28d3",
+              "targetStep": "/api/3/workflow_steps/9a2c35fb-1209-46f2-ad65-2b0408c5bf07"
+            }
+          ]
         }
       ],
       "uuid": "9f07eb76-0b7a-4165-b6e3-19e43ebd2619"

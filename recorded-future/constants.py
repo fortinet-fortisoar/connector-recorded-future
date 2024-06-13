@@ -1,3 +1,9 @@
+""" Copyright start
+  Copyright (C) 2008 - 2024 Fortinet Inc.
+  All rights reserved.
+  FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
+  Copyright end """
+
 
 fields_options = {
     'National Vulnerability Database description': 'nvdDescription',
@@ -157,3 +163,5 @@ direction_list = {
     'Ascending': 'asc',
     'Descending': 'desc'
 }
+
+PARA_LIST = ['malware', 'categories', 'watchlists', 'actors', 'panels', 'playbook_alert_ids', 'organization_ids', 'mitre_codes', 'malwares']
