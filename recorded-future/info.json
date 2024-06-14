@@ -269,8 +269,8 @@
       "parameters": [
         {
           "title": "Risk Rule List",
-          "tooltip": "Risk Rule List based on which you want to retrieve risk list information for domain (s) from Recorded Future",
-          "description": "Risk Rule List based on which you want to retrieve risk list information for domain (s) from Recorded Future",
+          "tooltip": "Risk Rule List based on which you want to retrieve risk list information for domain (s) from Recorded Future.",
+          "description": "Risk Rule List based on which you want to retrieve risk list information for domain (s) from Recorded Future.\nYou can choose from the following options: Historically Reported by Insikt Group, C&C Nameserver, C&C DNS Name, C&C URL, Compromised URL, Recently Resolved to Host of Many DDNS Names, Historically Reported as a Defanged DNS Names, Recent Fast Flux DNS Name, Historically Reported in Threat List, Historically Linked to Cyber Attack, Historical Malware Analysis DNS Name, Blacklisted DNS Name, Active Phishing URL, Ransomware Distribution URL, Ransomware Payment DNS Name, Recently Reported by Insikt Group, Recently Reported as a Defanged DNS Names, Recently Linked to Cyber Attack, Recent Malware Analysis DNS Name, Recent Threat Researcher, Recent Typosquat Similarity - DNS Sandwich, Recent Typosquat Similarity - Typo or Homograph, Recently Resolved to Malicious IP, Recently Resolved to Suspicious IP, Recently Resolved to Unusual IP, Recently Resolved to Very Malicious IP, Trending in Recorded Future Analyst Community, Historical Threat Researcher, Historical Typosquat Similarity - DNS Sandwich, or Historical Typosquat Similarity - Typo or Homograph.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -461,7 +461,7 @@
         },
         {
           "title": "Risk Score",
-          "description": "Filter the search results by the risk score, which are integer values from 0 to 100.For example, Risk Score=[20,90] // same as 20 <= Risk Score <= 90 ",
+          "description": "Filter the search results by the risk score, which are integer values from 0 to 100.For example, Risk Score=[20,90] // same as 20 <= Risk Score <= 90\nRisk Score=(20,90) // same as 20 <= Risk Score <= 90\nRisk Score=[20,90) // same as 20 <= Risk Score <= 90\nRisk Score=[20,) // same as 20 <= Risk Score\nRisk Score=[,90) // same as Risk Score < 90",
           "tooltip": "Eg. [20,90] same as 20 <= riskScore <= 90, [20,90) same as 20 <= riskScore < 90",
           "required": false,
           "editable": true,
@@ -501,7 +501,7 @@
         },
         {
           "title": "Risk Rule",
-          "description": "Risk Rule List based on which you want to retrieve risk list information for domain (s) from Recorded Future.",
+          "description": "Risk Rule List based on which you want to retrieve risk list information for domain (s) from Recorded Future.\nYou can choose from the following options: Historically Reported by Insikt Group, C&C Nameserver, C&C DNS Name, C&C URL, Compromised URL, Recently Resolved to Host of Many DDNS Names, Historically Reported as a Defanged DNS Names, Recent Fast Flux DNS Name, Historically Reported in Threat List, Large, Historically Linked to Cyber Attack, Historical Malware Analysis DNS Name, Blacklisted DNS Name, Active Phishing URL, Ransomware Distribution URL, Ransomware Payment DNS Name, Recently Reported by Insikt Group, Recently Reported as a Defanged DNS Names, Recently Linked to Cyber Attack, Recent Malware Analysis DNS Name, Recent Threat Researcher, Recent Typosquat Similarity - DNS Sandwich, Recent Typosquat Similarity - Typo or Homograph, Recently Resolved to Malicious IP, Recently Resolved to Suspicious IP, Recently Resolved to Unusual IP, Recently Resolved to Very Malicious IP, Trending in Recorded Future Analyst Community, Historical Threat Researcher, Historical Typosquat Similarity - DNS Sandwich, or Historical Typosquat Similarity - Typo or Homograph.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -697,7 +697,7 @@
         },
         {
           "title": "Fields",
-          "description": "Optional) Fields that you want to include in the output. You can choose from the following options: Analysis Notes, Entity, Counts, Intel Card URL, Metrics, Related Entities, Risk, Sightings, Threat Lists, and Event Timestamps. By default, this option is set as Entity.",
+          "description": "(Optional) Fields that you want to include in the output. You can choose from the following options: Analysis Notes, Entity, Counts, Intel Card URL, Metrics, Related Entities, Risk, Sightings, Threat Lists, and Event Timestamps. By default, this option is set as Entity.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -828,7 +828,7 @@
       "parameters": [
         {
           "title": "Risk Rule List",
-          "description": "Risk Rule List based on which you want to retrieve risk list information for IP address(es) from Recorded Future.",
+          "description": "Risk Rule List based on which you want to retrieve risk list information for IP address(es) from Recorded Future.\nYou can choose from the following options: Historically Reported by Insikt Group, Inside Possible Bogus BGP Route, Historical Botnet Traffic, Nameserver for C&C Server, Historical C&C Server, Cyber Exploit Signal: Important, Cyber Exploit Signal: Medium, Recent Host of Many DDNS Names, Historically Reported as a Defanged IP, Resolution of Fast Flux DNS Name, Historically Reported in Threat List, Historical Honeypot Sighting, Honeypot Host, Recent C&C Server, Historically Linked to Intrusion Method, Historically Linked to APT, Historically Linked to Cyber Attack, Malicious Packet Source, Malware Delivery, Historical Multicategory Blacklist, Historical Open Proxies, Phishing Host, Historical Positive Malware Verdict, Recently Reported by Insikt Group, Recent Botnet Traffic, Current C&C Server, Recently Reported as Defanged IP, Recent Honeypot Sighting, Recently Linked to Intrusion Method, Recently Linked to APT, Recently Linked to Cyber Attack, Recent Multicategory Blacklist, Recent Open Proxies, Recent Positive Malware Verdict, Recent Spam Source, Recent SSH/Dictionary Attacker, Recent Bad SSL Association, Recent Threat Researcher, Trending in Recorded Future Analyst Community, Historical Spam Source, Historical SSH/Dictionary Attacker, Historical Bad SSL Association, Historical Threat Researcher, Tor Node, Unusual IP, or Vulnerable Host.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -1065,7 +1065,7 @@
         },
         {
           "title": "Risk Score",
-          "description": "Filter the search results by the risk score, which are integer values from 0 to 100.For example, Risk Score=[20,90] // same as 20 <= Risk Score <= 90 ",
+          "description": "Filter the search results by the risk score, which are integer values from 0 to 100.\nFor example, Risk Score=[20,90] // same as 20 <= Risk Score <= 90\nRisk Score=(20,90) // same as 20 <= Risk Score <= 90\nRisk Score=[20,90) // same as 20 <= Risk Score <= 90\nRisk Score=[20,) // same as 20 <= Risk Score\nRisk Score=[,90) // same as Risk Score < 90",
           "tooltip": "Eg. [20,90] same as 20 <= riskScore <= 90, [20,90) same as 20 <= riskScore < 90",
           "required": false,
           "editable": true,
@@ -1105,7 +1105,7 @@
         },
         {
           "title": "Risk Rule",
-          "description": "Risk Rule List based on which you want to retrieve risk list information for IP address(es) from Recorded Future.",
+          "description": "Risk Rule List based on which you want to retrieve risk list information for IP address(es) from Recorded Future.\nYou can choose from the following options: Historically Reported by Insikt Group, Inside Possible Bogus BGP Route, Historical Botnet Traffic, Nameserver for C&C Server, Historical C&C Server, Cyber Exploit Signal: Important, Cyber Exploit Signal: Medium, Recent Host of Many DDNS Names, Historically Reported as a Defanged IP, Resolution of Fast Flux DNS Name, Historically Reported in Threat List, Historical Honeypot Sighting, Honeypot Host, Recent C&C Server, Large, Historically Linked to Intrusion Method, Historically Linked to APT, Historically Linked to Cyber Attack, Malicious Packet Source, Malware Delivery, Historical Multicategory Blacklist, Historical Open Proxies, Phishing Host, Historical Positive Malware Verdict, Recently Reported by Insikt Group, Recent Botnet Traffic, Current C&C Server, Recently Reported as Defanged IP, Recent Honeypot Sighting, Recently Linked to Intrusion Method, Recently Linked to APT, Recently Linked to Cyber Attack, Recent Multicategory Blacklist, Recent Open Proxies, Recent Positive Malware Verdict, Recent Spam Source, Recent SSH/Dictionary Attacker, Recent Bad SSL Association, Recent Threat Researcher, Trending in Recorded Future Analyst Community, Historical Spam Source, Historical SSH/Dictionary Attacker, Historical Bad SSL Association, Historical Threat Researcher, Tor Node, Unusual IP, or Vulnerable Host.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -1435,7 +1435,7 @@
       "parameters": [
         {
           "title": "Risk Rule List",
-          "description": "Risk Rule List based on which you want to retrieve risk list information for file(s) from Recorded Future. You can choose from the following options: Reported by Insikt Group, Historically Reported in Threat List, Linked to Cyber Attack, Linked to Malware, Linked to Attack Vector, Linked to Vulnerability, Malware SSL Certificate Fingerprint, Positive Malware Verdict, Trending in Recorded Future Analyst Community, or Threat Researcher.",
+          "description": "Risk Rule List based on which you want to retrieve risk list information for file(s) from Recorded Future.\nYou can choose from the following options: Reported by Insikt Group, Historically Reported in Threat List, Linked to Cyber Attack, Linked to Malware, Linked to Attack Vector, Linked to Vulnerability, Malware SSL Certificate Fingerprint, Positive Malware Verdict, Trending in Recorded Future Analyst Community, or Threat Researcher.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -1632,7 +1632,7 @@
         },
         {
           "title": "Risk Score",
-          "description": "Filter the search results by the risk score, which are integer values from 0 to 100. For example, Risk Score=[20,90] // same as 20 <= Risk Score <= 90 ",
+          "description": "Filter the search results by the risk score, which are integer values from 0 to 100.\nFor example, Risk Score=[20,90] // same as 20 <= Risk Score <= 90\nRisk Score=(20,90) // same as 20 <= Risk Score <= 90\nRisk Score=[20,90) // same as 20 <= Risk Score <= 90\nRisk Score=[20,) // same as 20 <= Risk Score\nRisk Score=[,90) // same as Risk Score < 90",
           "tooltip": "Eg. [20,90] same as 20 <= riskScore <= 90, [20,90) same as 20 <= riskScore < 90",
           "required": false,
           "editable": true,
@@ -1691,7 +1691,7 @@
         },
         {
           "title": "Risk Rule",
-          "description": "Risk Rule List based on which you want to retrieve risk list information for filehash(es) from Recorded Future.",
+          "description": "Risk Rule List based on which you want to retrieve risk list information for filehash(es) from Recorded Future.\nYou can choose from the following options: Reported by Insikt Group, Historically Reported in Threat List, Linked to Cyber Attack, Linked to Malware, Linked to Attack Vector, Linked to Vulnerability, Malware SSL Certificate Fingerprint, Positive Malware Verdict, Trending in Recorded Future Analyst Community, or Threat Researcher.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -1852,7 +1852,7 @@
         },
         {
           "title": "Fields",
-          "description": "Fields that you want to include in the output.",
+          "description": "(Optional) Fields that you want to include in the output.\nYou can choose from the following options: National Vulnerability Database description, Analyst Notes, Common Names, Entity, Counts, Common Platform Enumeration, Common Platform Enumeration 2.2 URI, Common Vulnerability Scoring System, Intel Card URL, Metrics, Related Entities, Related Links, Risk, Sightings, Threat Lists, or Event Timestamps.",
           "tooltip": "Fields to include in output",
           "required": false,
           "editable": true,
@@ -1949,7 +1949,7 @@
       "parameters": [
         {
           "title": "Risk Rule List",
-          "description": "Risk Rule List based on which you want to retrieve risk list information for vulnerability(ies) from Recorded Future.",
+          "description": "Risk Rule List based on which you want to retrieve risk list information for vulnerability(ies) from Recorded Future.\nYou can choose from the following options: Historically Reported by Insikt Group, Web Reporting Prior to CVSS Score, Cyber Exploit Signal: Critical, Cyber Exploit Signal: Important, Cyber Exploit Signal: Medium, Linked to Historical Cyber Exploit, Historically Linked to Exploit Kit, Historically Linked to Malware, Historically Linked to Remote Access Trojan, Historically Linked to Ransomware, Linked to Recent Cyber Exploit, Recently Linked to Exploit Kit, Recently Linked to Malware, Recently Linked to Remote Access Trojan, Recently Linked to Ransomware, NIST Severity: Critical, NIST Severity: High, NIST Severity: Low, NIST Severity: Medium, Web Reporting Prior to NVD Disclosure, Recently Reported by Insikt Group, Recently Linked to Penetration Testing Tools, or Historically Linked to Penetration Testing Tools.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -2140,7 +2140,7 @@
         },
         {
           "title": "Fields",
-          "description": "Fields that you want to include in the output.",
+          "description": "Fields that you want to include in the output.\nYou can choose from the following options: National Vulnerability Database description, Analyst Notes, Common Names, Entity, Counts, Common Platform Enumeration, Common Platform Enumeration 2.2 URI, Common Vulnerability Scoring System, Intel Card URL, Metrics, Related Entities, Related Links, Risk, Sightings, Threat Lists, or Event Timestamps.",
           "tooltip": "Fields to include in output",
           "required": false,
           "editable": true,
@@ -2200,7 +2200,7 @@
         },
         {
           "title": "Risk Score",
-          "description": "Filter the search results by the risk score, which are integer values from 0 to 100. For example, Risk Score=[20,90] // same as 20 <= Risk Score <= 90 ",
+          "description": "Filter the search results by the risk score, which are integer values from 0 to 100.\nFor example, Risk Score=[20,90] // same as 20 <= Risk Score <= 90\nRisk Score=(20,90) // same as 20 <= Risk Score <= 90\nRisk Score=[20,90) // same as 20 <= Risk Score <= 90\nRisk Score=[20,) // same as 20 <= Risk Score\nRisk Score=[,90) // same as Risk Score < 90",
           "tooltip": "Eg. [20,90] same as 20 <= riskScore <= 90, [20,90) same as 20 <= riskScore < 90",
           "required": false,
           "editable": true,
@@ -2210,7 +2210,7 @@
         },
         {
           "title": "CVSS Score",
-          "description": "Filter the search results by the common vulnerability scoring system score (CVSS score). You can enter a number between 0 to 10 as the CVSS score in the format [0,10] ",
+          "description": "Filter the search results by the common vulnerability scoring system score (CVSS score). You can enter a number between 0 to 10 as the CVSS score in the format [0,10]\nFor example, [2,9.3], (2,9.3), [2,3.6), (6,), (,8) . Working of the CVSS score examples is the same as the risk score examples.",
           "tooltip": "Common Vulnerability Scoring System Score between 0 to 10 Eg. [2,9] same as 2 <= CVSS Score <= 9, [2,9) same as 2 <= CVSS Score < 9",
           "required": false,
           "editable": true,
@@ -2250,7 +2250,7 @@
         },
         {
           "title": "Risk Rule",
-          "description": "Risk Rule List based on which you want to retrieve risk list information for vulnerability(ies) from Recorded Future.",
+          "description": "Risk Rule List based on which you want to retrieve risk list information for vulnerability(ies) from Recorded Future.\nYou can choose from the following options: Historically Reported by Insikt Group, Web Reporting Prior to CVSS Score, Cyber Exploit Signal: Critical, Cyber Exploit Signal: Important, Cyber Exploit Signal: Medium, Large, Linked to Historical Cyber Exploit, Historically Linked to Exploit Kit, Historically Linked to Malware, Historically Linked to Remote Access Trojan, Historically Linked to Ransomware, Linked to Recent Cyber Exploit, Recently Linked to Exploit Kit, Recently Linked to Malware, Recently Linked to Remote Access Trojan, Recently Linked to Ransomware, NIST Severity: Critical, NIST Severity: High, NIST Severity: Low, NIST Severity: Medium, Web Reporting Prior to NVD Disclosure, Recently Reported by Insikt Group, Recently Linked to Penetration Testing Tools, or Historically Linked to Penetration Testing Tools.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -2685,7 +2685,7 @@
         },
         {
           "title": "Risk Score",
-          "description": "Filter the search results by the risk score, which are integer values from 0 to 100. For example, Risk Score=[20,90] // same as 20 <= Risk Score <= 90",
+          "description": "Filter the search results by the risk score, which are integer values from 0 to 100.\nFor example, Risk Score=[20,90] // same as 20 <= Risk Score <= 90\nRisk Score=(20,90) // same as 20 <= Risk Score <= 90\nRisk Score=[20,90) // same as 20 <= Risk Score <= 90\nRisk Score=[20,) // same as 20 <= Risk Score\nRisk Score=[,90) // same as Risk Score < 90",
           "tooltip": "Eg. [20,90] same as 20 <= riskScore <= 90, [20,90) same as 20 <= riskScore < 90",
           "required": false,
           "editable": true,
@@ -2744,7 +2744,7 @@
         },
         {
           "title": "Order By",
-          "description": "Order the search results by this filter criteria.",
+          "description": "Order the search results by this filter criteria.\nYou can choose from the following options: Created, Criticality, First Seen, Last Seen, Modified, Risk Score, Rules, Seven Days Hits, Sixty Days Hits, or Total Hits.",
           "required": false,
           "editable": true,
           "visible": true,
