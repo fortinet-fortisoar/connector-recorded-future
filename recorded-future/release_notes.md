@@ -1,6 +1,6 @@
 #### What's New:
 
-- Added following new actions and its corresponding playbooks:
+- Added following new actions and corresponding playbooks:
     - Get Maps List
     - Get Threat Map
     - Get Threat Map By Org ID
