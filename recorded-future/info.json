@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "description": "Recorded Future is a threat intelligence product that automatically collects and analyzes threat intelligence from technical, open, and dark web sources to provide invaluable context for faster human analysis and real-time integration with your existing security systems.",
   "publisher": "Fortinet",
-  "cs_approved": true,
+  "cs_approved": false,
   "cs_compatible": true,
   "category": "Threat Intelligence",
   "icon_small_name": "small.png",
